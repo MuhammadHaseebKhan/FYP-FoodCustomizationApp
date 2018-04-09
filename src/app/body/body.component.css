@@ -1,0 +1,40 @@
+
+.body{
+    position: relative;
+    height: 93vh;
+    width: 100%;
+    /* background: red; */
+    /* border: 1px solid white; */
+    background-image: url('../../assets/images/blur-restaurant.png');
+    /* margin-top: 0px; */
+}
+.buttons-container{
+    height: 200px;
+    width: 550px;
+    position: absolute;
+    border: 2px solid transparent;
+    left: 480px;
+    top: 330px;
+    text-align: center;
+    padding-top: 50px;
+}
+.button{
+    height: 50px;
+    width: 120px;
+    border: 2px solid black;
+    background: steelblue;
+    margin-right: 20px;
+    outline: none;
+    font-size: 25px;
+    transition-duration: 0.3s;
+}
+.button:hover{
+    border-radius: 20px;
+    cursor: pointer;
+   background: steelblue;
+    color: white;
+}
+/* .mat-btn{
+    height: 130px;
+    width: 100px;
+} */

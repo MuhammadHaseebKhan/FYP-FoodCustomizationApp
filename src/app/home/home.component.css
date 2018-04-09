@@ -1,0 +1,18 @@
+.home-container{
+    border: 0px solid red;
+}
+.items{
+    list-style: none;
+}
+.items li{
+    border: 1px solid;
+    height: 30px;
+    width: 150px;
+    background: wheat;
+}
+.items li:hover{
+    cursor: pointer;
+}
+.items li:active{
+    background: thistle;
+}

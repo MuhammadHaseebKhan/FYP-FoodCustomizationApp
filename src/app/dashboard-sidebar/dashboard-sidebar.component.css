@@ -1,0 +1,39 @@
+.example-container{
+    width: 100%;
+    height: 100%;
+    /* border: 3px solid yellow; */
+}
+
+.example-sidenav-content{
+    display: flex;
+    height: 91%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    border: 3px solid green;
+}
+
+.example-sidenav{
+    padding: 20px;
+}
+
+.side-logo{
+    border: 0px solid;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    background: linear-gradient(white, #00bcd4) no-repeat;
+}
+
+.side-nav-list{
+    border: 1px solid;
+    width: 200px;
+    height:40px;
+    margin: 10px auto;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.side-nav-list:hover{
+    cursor: pointer;
+    background: lightgray;
+}

@@ -1,0 +1,84 @@
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.btn-spacing{
+    margin: 0 10px;
+}
+
+.btn-spacing.md-36{
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    font-size: 36px;
+    margin-top: 10px;
+    color: black;
+    display: block;
+}
+.btn-spacing.md-36:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+mat-toolbar{
+    background: #00bcd4;
+    /* color: white; */
+}
+
+.brand-logo{
+    display: flex;
+    color: white;
+    /* border: 1px solid; */ 
+    margin-right: 30px; 
+}
+
+h1{
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dropdown{
+    float: left;
+    overflow: hidden;
+    position: initial;
+}
+
+.dropdown-content {
+    border: 1px solid green;
+    display: none;
+    position: absolute;
+    top:50px;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #00bcd4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.toggle-icon{
+    color: white;
+}
+.toggle-icon:hover{
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,48 @@
+
+<!-- <mat-card class="demo-panel">
+  <mat-card-title>
+    Material sidebar
+  </mat-card-title>
+  <mat-card-content> -->
+      
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
+        <mat-nav-list class="side-logo">
+          <h1>Logo</h1>
+        </mat-nav-list> 
+        <mat-nav-list class="side-nav-list">
+          Dashboard
+        </mat-nav-list>  
+        <mat-nav-list class="side-nav-list">
+          Template
+        </mat-nav-list>
+        <mat-nav-list class="side-nav-list">
+            Layouts
+        </mat-nav-list>  
+        <mat-nav-list class="side-nav-list">
+            Cards
+        </mat-nav-list>
+        <mat-nav-list class="side-nav-list">
+            Template
+        </mat-nav-list>  
+      </mat-sidenav>
+
+      <!-- <mat-sidenav-content>
+        <p>hello world</p>
+      </mat-sidenav-content> -->
+      <!-- <mat-sidenav #sidenav class="example-sidenav" mode="push">
+          Second Sidenav content goes here
+      </mat-sidenav> -->
+
+      <app-nav-bar [sidenav]="sidenav"></app-nav-bar>
+
+      <div class="example-sidenav-content">
+          <app-dashboard-content></app-dashboard-content>
+      </div>
+    </mat-sidenav-container>
+  <!-- </mat-card-content>
+</mat-card> -->
+
+<!-- *************************************************** -->
+
+
