@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
   getRestaurantsHit = 'restaurant';
   registerUserHit = 'users';
   hide = true;
-  uId: '';
+  resId: '';
   isFormValid = false;
   selected2;
   myControl: FormControl = new FormControl();
@@ -55,6 +55,8 @@ export class SignUpComponent implements OnInit {
       name: ['', [Validators.required]],
       email: ['', Validators.required],
       role: ['', Validators.required],
+      password: ['', Validators.required],
+      resId: ['', Validators.required]
       // countryId: ['', Validators.required],
       // uId: ['', Validators.required],
     });
@@ -128,7 +130,7 @@ export class SignUpComponent implements OnInit {
   filter(val: any): any[] {
     console.log(val);
     if (typeof val !== 'string') {
-      this.uId = val['_id'];
+      this.resId = val['_id'];
     } else {
       console.log(this.options);
       // this.dummyOptions = this.options.data;
