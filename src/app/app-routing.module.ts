@@ -7,18 +7,36 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+import { AuthGuard} from './guard/auth.guard';
+import { AddNewRestaurantComponent } from './add-new-restaurant/add-new-restaurant.component';
+import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
-    { path : 'admin-dashboard' , component: AdminDashboardComponent},
+    {
+        path : 'admin-dashboard',
+        canActivate : [AuthGuard],
+        component: AdminDashboardComponent,
+        children: [
+            { path: 'adminprofile', component: AdminprofileComponent },
+            { path: 'dashboardcontent', component: DashboardContentComponent },
+            { path: 'newrestaurant', component: AddNewRestaurantComponent },
+            { path: 'restaurantslist', component: RestaurantsListComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'home', component: HomeComponent },
+            { path : 'signup' , component: SignUpComponent}
+        ]
+        },
+    // { path : 'adminprofile' , component: AdminprofileComponent},
     { path : 'login' , component: LoginComponent},
     { path : 'signup' , component: SignUpComponent},
-    { path : 'body' , component: BodyComponent},
-    { path : 'home' , component: HomeComponent},
-    { path : 'home/:id' , component: AboutComponent},
+    // { path : 'body' , component: BodyComponent},
+    // { path : 'home' , component: HomeComponent},
+    // { path : 'home/:id' , component: AboutComponent},
     { path : '**' , component: PageNotFoundComponent}
-]
+];
 
 @NgModule({
     imports : [RouterModule.forRoot(routes)],
@@ -27,4 +45,4 @@ const routes: Routes = [
 
 export class AppRoutingModule {}
 export const routingComponents = [BodyComponent, LoginComponent , SignUpComponent, HomeComponent,
-     AboutComponent, PageNotFoundComponent]
+     AboutComponent, PageNotFoundComponent, AdminprofileComponent, DashboardContentComponent, RestaurantsListComponent];

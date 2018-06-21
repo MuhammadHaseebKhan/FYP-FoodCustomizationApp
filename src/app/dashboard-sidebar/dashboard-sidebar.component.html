@@ -8,22 +8,39 @@
     <mat-sidenav-container class="example-container">
       <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
         <mat-nav-list class="side-logo">
-          <h1>Logo</h1>
+          <!-- <h1>Logo</h1> -->
+          <mat-icon class="brandIcon">local_dining</mat-icon>
+          <h1>Foodistan</h1>
         </mat-nav-list> 
         <mat-nav-list class="side-nav-list">
-          Dashboard
+          <div routerLink="/admin-dashboard/adminprofile" class="navListContainer">
+              <img class="navListImage" src="./../../assets/images/man-user.png" alt="card data" />
+              <p>My Profile</p>
+          </div>
         </mat-nav-list>  
         <mat-nav-list class="side-nav-list">
-          Template
+            <div routerLink="/admin-dashboard/restaurantslist" class="navListContainer1">
+                <img class="navListImage" src="./../../assets/images/plate-fork-and-knife.png" alt="card data" />
+                <p>Restaurants List</p>
+            </div>
         </mat-nav-list>
         <mat-nav-list class="side-nav-list">
-            Layouts
+          <div routerLink="signup" class="navListContainer2">
+              <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
+              <p>Add User</p>
+          </div>
         </mat-nav-list>  
         <mat-nav-list class="side-nav-list">
-            Cards
+            <div class="navListContainer3">
+                <img class="navListImage" src="./../../assets/images/settings-work-tool.png" alt="card data" />
+                <p>Settings</p>
+            </div>
         </mat-nav-list>
         <mat-nav-list class="side-nav-list">
-            Template
+            <div class="navListContainer4">
+                <img class="navListImage" src="./../../assets/images/feedback.png" alt="card data" />
+                <p>Feedback</p>
+            </div>
         </mat-nav-list>  
       </mat-sidenav>
 
@@ -37,8 +54,10 @@
       <app-nav-bar [sidenav]="sidenav"></app-nav-bar>
 
       <div class="example-sidenav-content">
-          <app-dashboard-content></app-dashboard-content>
+        <router-outlet></router-outlet>
+          <!-- <app-dashboard-content></app-dashboard-content> -->
       </div>
+      <!-- <ng-content></ng-content> -->
     </mat-sidenav-container>
   <!-- </mat-card-content>
 </mat-card> -->

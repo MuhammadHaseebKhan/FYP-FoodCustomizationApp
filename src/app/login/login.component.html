@@ -12,13 +12,14 @@
 
             <mat-form-field>
                 <mat-icon matPrefix>lock</mat-icon>
-                <input [(ngModel)]="input.password" name="password" matInput placeholder="&nbsp; &nbsp;Password" [type]="hide ? 'password' : 'text'">
+                <input [(ngModel)]="input.password"(keyup.Enter)="getLogin()" name="password" matInput placeholder="&nbsp; &nbsp;Password" [type]="hide ? 'password' : 'text'">
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
             
             </mat-form-field>          
         </div>
 
-        <button class="login-button" mat-raised-button (click)="getLogin()">LOGIN</button>
+        <!-- <input class="login-button" type="submit" (click)="getLogin()" value="Login"> -->
+        <button class="login-button" (click)="getLogin()" mat-raised-button >LOGIN</button>
 
         <div class="links">
             <a routerLink="/signup">Register Now!</a>

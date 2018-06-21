@@ -7,24 +7,30 @@
 .dashboard-content-first-row{
     display: flex;
     /* border: 1px solid; */
-    margin: 10px;
+    /* margin: 10px; */
+    margin-bottom: 30px;
 }
 
 .dashboard-content-card-1{
     margin-right: 20px;
+    min-height: 130px;
+    color: white;
     background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
 }
 .dashboard-content-card-2{
     margin-right: 20px;
-    background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
+    color: white;
+    background: linear-gradient(45deg, #FF5252 0%, #f48fb1 100%);
 }
 .dashboard-content-card-3{
     margin-right: 20px;
+    color: white;
     background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%);
 }
 .dashboard-content-card-4{
     margin-right: 20px;
-    background: linear-gradient(45deg, #FF5252 0%, #f48fb1 100%);
+    color: white;
+    background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%);
 }
 
 .dashboard-content-second-row{
@@ -35,4 +41,17 @@
 
 .dashboard-content-second-row-card{
     margin-right: 20px;
+    border: 1px solid red;
+    height: 450px;
+    width: 600px;
+}
+
+.card-img{
+    height: 60%;
+    width: 100%;
+}
+
+.card-img2{
+    height: 370px;
+    width: 100%;
 }

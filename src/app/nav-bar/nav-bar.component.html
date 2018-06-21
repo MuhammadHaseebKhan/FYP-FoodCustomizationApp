@@ -31,35 +31,36 @@
       Open Sidenav
   </button> -->
   <div class="brand-logo">
-    <mat-icon>local_dining</mat-icon>
-    <h1>Foodistan</h1>
+    <!-- <mat-icon>local_dining</mat-icon>
+    <h1>Foodistan</h1> -->
   </div>
   <mat-icon class="toggle-icon" (click)="sidenav.toggle()">menu</mat-icon>
   <span class="spacer"></span>
-  <button class="btn-spacing" mat-raised-button >About</button>
-  <button class="btn-spacing" mat-raised-button >Home</button>
-  <button class="btn-spacing" mat-raised-button [matMenuTriggerFor]="restaurantsList">Restaurants</button>
+  <button routerLink="about" class="btn-spacing" mat-raised-button >About</button>
+  <button (click)="getAllUsers()" class="btn-spacing" mat-raised-button >get all users</button>
+  <button routerLink="home" class="btn-spacing" mat-raised-button >Home</button>
+  <button *ngIf="isUserRoleAdmin" class="btn-spacing" mat-raised-button [matMenuTriggerFor]="restaurantsList">Restaurants</button>
   <mat-menu #restaurantsList="matMenu">
     <button mat-menu-item>
       <mat-icon>local_dining</mat-icon>
-      <span>Moos & Clucks</span>
+      <span routerLink="newrestaurant">Add New Restaurant</span>
     </button>
-    <button mat-menu-item>
+    <button routerLink="restaurantslist" mat-menu-item>
       <mat-icon>local_dining</mat-icon>
-      <span>Born Bistro</span>
+      <span>Restaurants List</span>
     </button>
-    <button mat-menu-item>
+    <!-- <button mat-menu-item>
       <mat-icon>local_dining</mat-icon>
       <span>Food Delight</span>
-    </button>
+    </button> -->
   </mat-menu>
   <!-- <mat-icon class="btn-spacing">settings_input_antenna</mat-icon> -->
   <div class="dropdown">
-    <a href="#"><mat-icon class="btn-spacing md-36">person</mat-icon></a>
+    <a><mat-icon class="btn-spacing md-36">person</mat-icon></a>
     <div class="dropdown-content">
-      <a href="#">My Profile</a>
+      <a routerLink="/admin-dashboard/adminprofile">My Profile</a>
       <a href="#">Settings</a>
-      <a href="#">Log out</a>
+      <a (click)="onLogOut()" href="#">Log out</a>
     </div>
   </div>  
 </mat-toolbar>

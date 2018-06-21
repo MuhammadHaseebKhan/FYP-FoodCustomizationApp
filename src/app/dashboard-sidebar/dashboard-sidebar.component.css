@@ -5,35 +5,112 @@
 }
 
 .example-sidenav-content{
-    display: flex;
+    /* display: flex; */
     height: 91%;
+    width: 100%;
     /* align-items: center; */
     /* justify-content: center; */
-    border: 3px solid green;
+    /* border: 3px solid blue; */
 }
 
 .example-sidenav{
-    padding: 20px;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+    /* background: #f5f5f5; */
+    background: linear-gradient(45deg, #00AEFF 50%, #3369E6 100%);
 }
 
 .side-logo{
-    border: 0px solid;
-    width: 200px;
-    height: 150px;
-    text-align: center;
-    background: linear-gradient(white, #00bcd4) no-repeat;
+    display: flex;
+    color: white;
+    /* border: 1px solid; */ 
+    /* margin-right: 30px;  */
+    /* border: 2px solid #66adf5; */
+    width: 240px;
+    height: 80px;
+    margin-bottom: 60px;
+    /* text-align: center; */
+    /* background: linear-gradient(white, #00bcd4) no-repeat; */
+    background: linear-gradient(45deg, #1691f5 0%, #6c94f1 100%)
+}
+h1{
+    margin-left: 10px;
+    font-size: 32px;
+    /* font-weight: bold; */
+    /* border: 1px solid red; */
+    margin-top: 15px;
+}
+.brandIcon{
+    margin-left: 20px;
+    margin-top: 20px;
+    /* border: 1px solid green; */
 }
 
 .side-nav-list{
-    border: 1px solid;
-    width: 200px;
-    height:40px;
-    margin: 10px auto;
+    display: flex;
+    color: white;
+    border: 0.5px solid #66adf5;
+    width: 240px;
+    height:50px;
+    /* padding-top: 15px; */
+    /* margin: 10px auto; */
     text-align: center;
+    vertical-align: middle;
     transition: 0.2s;
+    background: transparent;
 }
 
 .side-nav-list:hover{
     cursor: pointer;
-    background: lightgray;
+    opacity: 0.5;
+}
+
+.navListContainer{
+    display: flex;
+    width: 125px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin-left: 30px;
+    justify-content: space-between;
+}
+.navListContainer1{
+    display: flex;
+    width: 175px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin-left: 30px;
+    justify-content: space-between;
+}
+.navListContainer2{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    /* border: 1px solid red;*/
+    margin-left: 30px; 
+    justify-content: space-between;
+}
+.navListContainer3{
+    display: flex;
+    width: 115px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin-left: 30px;
+    justify-content: space-between;
+}
+.navListContainer4{
+    display: flex;
+    width: 125px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin-left: 30px;
+    justify-content: space-between;
+}
+
+
+.navListImage{
+    height: 25px;
+
+}
+p{
+    font-size: 18px;
 }

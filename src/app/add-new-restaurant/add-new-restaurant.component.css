@@ -1,0 +1,39 @@
+
+.addRestaurantPage{
+  border: 1px solid green;
+  height: 91vh;
+  width: 100%;
+}
+
+.addRestaurantCard{
+  border: 1px solid red;
+  width: 400px;
+  height: auto;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  /* width: 100%; */
+}
+mat-card-title{
+  /* border: 1px solid green; */
+  text-align: center;
+  margin-bottom: 40px;
+}
+mat-form-field{
+  /* border: 1px solid green; */
+  margin-bottom: 10px;
+}
+
+.submit-button{
+  background: linear-gradient(45deg, #00AEFF 50%, #3369E6 100%);
+  border-radius: 10px;
+  width: 100px;
+  color: white;
+  align-self: center;
+}

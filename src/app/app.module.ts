@@ -15,6 +15,13 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { DashboardSidebarComponent } from './dashboard-sidebar/dashboard-sidebar.component';
 import {HttpServiceService} from './services/http-service.service';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guard/auth.guard';
+import { AddNewRestaurantComponent } from './add-new-restaurant/add-new-restaurant.component';
+import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,9 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
     AdminDashboardComponent,
     DashboardSidebarComponent,
     DashboardContentComponent,
+    AdminprofileComponent,
+    AddNewRestaurantComponent,
+    RestaurantsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +44,10 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    FlashMessagesModule
   ],
-  providers: [HttpServiceService],
+  providers: [HttpServiceService, ValidateService, FlashMessagesService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,8 @@
 
 .btn-spacing{
     margin: 0 10px;
+    background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+    color: white;
 }
 
 .btn-spacing.md-36{
@@ -16,6 +18,7 @@
     margin-top: 10px;
     color: black;
     display: block;
+    background: white;
 }
 .btn-spacing.md-36:hover{
     cursor: pointer;
@@ -23,7 +26,9 @@
 }
 
 mat-toolbar{
-    background: #00bcd4;
+    background: white;
+    border-bottom: 1px solid gray;
+    /* background: #00AEFF; */
     /* color: white; */
 }
 
@@ -76,7 +81,7 @@ h1{
 }
 
 .toggle-icon{
-    color: white;
+    color: #329cea;
 }
 .toggle-icon:hover{
     cursor: pointer;
