@@ -12,6 +12,10 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
 import { AuthGuard} from './guard/auth.guard';
 import { AddNewRestaurantComponent } from './add-new-restaurant/add-new-restaurant.component';
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
+import { CategoryComponent } from './category/category.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { FoodComponent } from './food/food.component';
+import { AddFoodComponent } from './add-food/add-food.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
@@ -26,7 +30,15 @@ const routes: Routes = [
             { path: 'restaurantslist', component: RestaurantsListComponent },
             { path: 'about', component: AboutComponent },
             { path: 'home', component: HomeComponent },
-            { path : 'signup' , component: SignUpComponent}
+            { path : 'signup' , component: SignUpComponent},
+            { path : 'category' , component: CategoryComponent,
+                children: [
+                ]
+
+            },
+            { path : 'addcategory' , component: AddCategoryComponent},
+            { path : 'food' , component: FoodComponent},
+            { path : 'addfood' , component: AddFoodComponent},
         ]
         },
     // { path : 'adminprofile' , component: AdminprofileComponent},
@@ -45,4 +57,5 @@ const routes: Routes = [
 
 export class AppRoutingModule {}
 export const routingComponents = [BodyComponent, LoginComponent , SignUpComponent, HomeComponent,
-     AboutComponent, PageNotFoundComponent, AdminprofileComponent, DashboardContentComponent, RestaurantsListComponent];
+     AboutComponent, PageNotFoundComponent, AdminprofileComponent, DashboardContentComponent, RestaurantsListComponent, CategoryComponent,
+     AddCategoryComponent];

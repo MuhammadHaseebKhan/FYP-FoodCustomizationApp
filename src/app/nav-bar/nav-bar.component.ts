@@ -60,7 +60,7 @@ export class NavBarComponent implements OnInit {
   }
 
   getAllUsers() {
-    return this.httpService.getRequest(this.getUsersHit, this.userToken)
+    return this.httpService.getRequest(this.getUsersHit)
     .subscribe( data => {
       console.log(data);
     },

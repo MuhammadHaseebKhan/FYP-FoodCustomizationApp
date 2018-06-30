@@ -113,9 +113,10 @@ export class SignUpComponent implements OnInit {
   }
 
   getAllRestaurants() {
-    return this.http.getRequest(this.getRestaurantsHit, this.userToken)
+    return this.http.getRequest(this.getRestaurantsHit)
       .subscribe(response => {
-        this.options = response.data;
+        this.dummyOptions = response;
+        this.options = this.dummyOptions.data;
         // console.log(data);
         console.log(this.options);
         // console.log(this.options.data);
@@ -140,7 +141,7 @@ export class SignUpComponent implements OnInit {
   }
 
   submitUserDetails() {
-    // this.createRestaurantForm.value.uId = this.myControl.value._id;
+    this.createRestaurantForm.value.resId = this.myControl.value._id;
     console.log(this.createRestaurantForm.value);
     this.http.createRestaurant(this.registerUserHit, this.createRestaurantForm.value)
       .subscribe(data => {

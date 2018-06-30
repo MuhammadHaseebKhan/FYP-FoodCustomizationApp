@@ -1,5 +1,20 @@
-
-<p>hello world!</p>
+<div class="profilePage">
+    <!-- <p> {{userProfileData.email}}</p> -->
+    <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title><b> {{userProfileData.role}} </b></mat-card-title>
+              <mat-card-subtitle>{{userProfileData.email}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./../../assets/images/profilepic.png" alt="Photo of a User">
+            <mat-card-content>
+              <p>
+               The user currently logged-in is <b>{{userProfileData.role}}</b>
+              </p>
+            </mat-card-content>
+          </mat-card>
+          
+</div>
 
 <!-- <app-dashboard-sidebar>
   <div class="adminprofile">

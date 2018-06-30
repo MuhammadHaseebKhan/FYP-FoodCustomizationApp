@@ -1,12 +1,12 @@
 
 .addRestaurantPage{
-  border: 1px solid green;
+  border: 1px solid transparent;
   height: 91vh;
   width: 100%;
 }
 
 .addRestaurantCard{
-  border: 1px solid red;
+  border: 1px solid #0288d1;
   width: 400px;
   height: auto;
   margin: 0px auto;
@@ -27,6 +27,7 @@ mat-card-title{
 }
 mat-form-field{
   /* border: 1px solid green; */
+  margin-left: 50px;
   margin-bottom: 10px;
 }
 
@@ -36,4 +37,5 @@ mat-form-field{
   width: 100px;
   color: white;
   align-self: center;
+  margin-left: 90px;
 }

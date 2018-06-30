@@ -1,0 +1,48 @@
+<div class="addRestaurantPage">
+
+    <mat-card class="addRestaurantCard">
+      <mat-card-title>
+        Add Food
+      </mat-card-title>
+      <mat-card-content>
+        <div class="example-container">
+          <form role="form" [formGroup]="createFoodForm">
+            <mat-form-field>
+              <input formControlName="name" matInput placeholder="Enter Name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" placeholder="Assign Category" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{ option.name}}
+                  </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <input formControlName="price" type="number" matInput placeholder="price">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <input formControlName="upImgId" matInput placeholder="upload image">
+            </mat-form-field>
+
+            <br>
+            <button class="submit-button mat-raised-button" [disabled]="createFoodForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="submitUserDetails()">Submit</button>
+  
+            <!-- <mat-form-field>
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field> -->
+  
+            <!-- <mat-form-field>
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>

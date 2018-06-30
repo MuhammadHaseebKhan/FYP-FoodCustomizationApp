@@ -1,3 +1,19 @@
-<p>
-  restaurants-list works!
-</p>
+<div class="restaurantListPage">
+
+  <div>
+    <h2 class="allRestaurantsHeading"> All Restaurants:</h2>
+    <ul (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
+
+    <li> {{restaurant.name}}</li>
+    <div class="buttonsContainer">
+      <!-- <button class="categoryCrudButtons">Edit</button> -->
+      <button (click)="deleteRestaurant(restaurant,i)" class="categoryCrudButtons">Delete</button>
+    </div>
+    
+  </ul>
+</div>
+  
+  <div (click)="addRestaurant()" class="addRestaurant">
+      <img src="./../../assets/images/add.png" alt="card data" />
+  </div>
+</div>

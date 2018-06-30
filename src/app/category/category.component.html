@@ -1,0 +1,21 @@
+<div class="categoryPage">
+
+  <div>
+    <h2 class="allCategoriesHeading"> All Categories:</h2>
+    <ul (click)="clickOnCategory(event,category,i)" class="categoriesListContainer" *ngFor="let category of dummyCategoriesArray; index as i">
+
+    <li> {{category.name}}</li>
+    <div class="buttonsContainer">
+      <!-- <button class="categoryCrudButtons">Edit</button> -->
+      <button (click)="deleteCategory(category,i)" class="categoryCrudButtons">Delete</button>
+    </div>
+    
+  </ul>
+</div>
+  
+  <div (click)="addCategory()" class="addCategory">
+    <img src="./../../assets/images/add.png" alt="card data" />
+  </div>
+</div>
+
+

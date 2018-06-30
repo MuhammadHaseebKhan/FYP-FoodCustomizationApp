@@ -1,5 +1,14 @@
-.adminprofile{
-    height: 92vh;
-    width: 100%;
-    border: 2px solid blue;
+.profilePage{
+    border: 1px solid transparent;
+    height: 100%;
 }
+.example-card {
+    max-width: 400px;
+    margin: 10px auto;
+  }
+  
+.example-header-image {
+    background-image: url("./../../assets/images/profilepic.png");
+    background-size: cover;
+  }
+  

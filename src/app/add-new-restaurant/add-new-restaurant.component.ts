@@ -59,7 +59,7 @@ export class AddNewRestaurantComponent implements OnInit {
     }
   }
   getAllUsers() {
-    return this.httpService.getRequest(this.getUsersHit, this.userToken)
+    return this.httpService.getRequest(this.getUsersHit)
       .subscribe(data => {
         this.options = data;
         // console.log(data);

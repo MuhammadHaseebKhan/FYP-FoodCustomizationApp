@@ -27,7 +27,7 @@
 
 mat-toolbar{
     background: white;
-    border-bottom: 1px solid gray;
+    border-bottom: 1.5px solid #0288d1;
     /* background: #00AEFF; */
     /* color: white; */
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpServiceService } from '../services/http-service.service';
 
 @Component({
   selector: 'app-adminprofile',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminprofileComponent implements OnInit {
 
-  constructor() { }
+  getProfileHit = 'users/me';
+  dummyUserProfileData;
+  userProfileData: any = {};
+  constructor(
+    private http: HttpServiceService,
+  ) { }
 
   ngOnInit() {
+    this.getProfile();
+  }
+  getProfile() {
+    this.http.getRequest(this.getProfileHit)
+    .subscribe(
+      response => {
+        this.dummyUserProfileData = response;
+        this.userProfileData = this.dummyUserProfileData.data;
+      console.log(this.userProfileData);
+    },
+      error => {
+        console.log(error);
+    }
+    );
   }
 
 }

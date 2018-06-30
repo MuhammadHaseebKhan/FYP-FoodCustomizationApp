@@ -8,6 +8,7 @@ import {HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
+// import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { MaterialModule } from './material.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -22,6 +23,14 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guard/auth.guard';
 import { AddNewRestaurantComponent } from './add-new-restaurant/add-new-restaurant.component';
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
+import { CategoryComponent } from './category/category.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { FoodComponent } from './food/food.component';
+import { AddFoodComponent } from './add-food/add-food.component';
+
+// import { registerLocaleData } from '@angular/common';
+// import zh from '@angular/common/locales/zh';
+// registerLocaleData(zh);
 
 @NgModule({
   declarations: [
@@ -35,6 +44,10 @@ import { RestaurantsListComponent } from './restaurants-list/restaurants-list.co
     AdminprofileComponent,
     AddNewRestaurantComponent,
     RestaurantsListComponent,
+    CategoryComponent,
+    AddCategoryComponent,
+    FoodComponent,
+    AddFoodComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +58,12 @@ import { RestaurantsListComponent } from './restaurants-list/restaurants-list.co
     FormsModule,
     HttpClientModule,
     HttpModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    // NgZorroAntdModule
   ],
   providers: [HttpServiceService, ValidateService, FlashMessagesService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// { provide: NZ_I18N, useValue: zh_CN }

@@ -38,7 +38,7 @@ export class HttpServiceService {
       });
   }
 
-  getRequest(hit, token) {
+  getRequest(hit) {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
     // const headers = this.createAuthorizationHeader(new HttpHeaders());
     return this.http.get(`${this.baseUrl}${hit}`, { headers: headers })
@@ -52,6 +52,15 @@ export class HttpServiceService {
     return this.http.post(`${this.baseUrl}${hit}`, data);
   }
 
+  delete(url) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.delete(url, { headers: headers })
+    .map(response => {
+      console.log(response);
+      return response;
+    });
+  }
+
   createRestaurant(hit, data) {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
     return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
@@ -61,5 +70,19 @@ export class HttpServiceService {
     return this.http.post(`${this.baseUrl}${hit}`, { headers: headers });
   }
 
+  addNewCategory(hit, data) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
+  }
+
+  getAllCategories(hit) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.post(`${this.baseUrl}${hit}`, { headers: headers });
+  }
+
+  addNewFood(hit, data) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
+  }
 
 }
