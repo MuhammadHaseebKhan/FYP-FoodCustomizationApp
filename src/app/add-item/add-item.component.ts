@@ -9,17 +9,16 @@ import { Observable } from 'rxjs/Observable';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-add-food',
-  templateUrl: './add-food.component.html',
-  styleUrls: ['./add-food.component.css']
+  selector: 'app-add-item',
+  templateUrl: './add-item.component.html',
+  styleUrls: ['./add-item.component.css']
 })
-export class AddFoodComponent implements OnInit {
-
+export class AddItemComponent implements OnInit {
   public input: any;
 
   userToken;
   getRestaurantsHit = 'restaurant';
-  registerFoodHit = 'food';
+  addItemHit = 'item';
   hide = true;
   catId: '';
   isFormValid = false;
@@ -30,14 +29,9 @@ export class AddFoodComponent implements OnInit {
 
   ];
   dummyOptions;
-  createFoodForm: FormGroup;
+  createItemForm: FormGroup;
   filteredOptions: Observable<any[]>;
   selectedFile: File = null;
-  imgInput = {
-    food_img_1 : ''
-  };
-  imgId;
-  dummyImgId;
 
   constructor(
     private router: Router,
@@ -56,10 +50,10 @@ export class AddFoodComponent implements OnInit {
   }
 
   createForm() {
-    this.createFoodForm = this.fb.group({
+    this.createItemForm = this.fb.group({
       name: ['', [Validators.required]],
       price: ['', Validators.required],
-      upImgId: ['', Validators.required],
+      foodId: ['', Validators.required],
       // password: ['', Validators.required],
       // resId: ['', Validators.required]
       // countryId: ['', Validators.required],
@@ -69,7 +63,7 @@ export class AddFoodComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getAllCategories();
+    this.getAllFood();
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -77,20 +71,20 @@ export class AddFoodComponent implements OnInit {
       );
   }
 
-  getAllCategories() {
-    return this.http.getRequest('category')
-      .subscribe(
-        response => {
-          this.dummyOptions = response;
-          this.options = this.dummyOptions.data;
-          // console.log(response);
-          // console.log(this.categoriesArray.data);
-          console.log(this.dummyOptions);
-        },
-        error => {
-          console.log(error);
-        }
-      );
+  getAllFood() {
+    return this.http.getRequest('food')
+    .subscribe(
+      response => {
+        this.dummyOptions = response;
+        this.options = this.dummyOptions.data;
+        // console.log(response);
+        // console.log(this.categoriesArray.data);
+        console.log(this.dummyOptions);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 
@@ -106,9 +100,9 @@ export class AddFoodComponent implements OnInit {
   }
 
   submitUserDetails() {
-    this.createFoodForm.value.catId = this.myControl.value._id;
-    console.log(this.createFoodForm.value);
-    this.http.addNewFood(this.registerFoodHit, this.createFoodForm.value)
+    this.createItemForm.value.foodId = this.myControl.value._id;
+    console.log(this.createItemForm.value);
+    this.http.addNewItem(this.addItemHit, this.createItemForm.value)
       .subscribe(data => {
         console.log(data);
       },
@@ -123,42 +117,29 @@ export class AddFoodComponent implements OnInit {
     return data ? data.name : data;
   }
 
-  onFileSelected(event) {
-    console.log(event);
-    this.selectedFile = event.target.files[0];
-  }
-
-  onUpload() {
-    const fd = new FormData();
-    fd.append('food_img_1', this.selectedFile, this.selectedFile.name);
-    console.log(this.selectedFile.name);
-    this.http.uploadImage('upload', fd)
-    .subscribe(
-      response => {
-        console.log(response);
-        this.dummyImgId = response;
-        this.imgId = this.dummyImgId.data._id;
-        console.log(this.imgId);
-        this.createFoodForm.value.upImgId = this.imgId;
-        this.submitUserDetails();
-        console.log(this.createFoodForm.value.upImgId);
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
-}
-
-
-  // addFood() {
-  //   console.log(this.input);
-  //   this.http.addNewFood('food', this.input)
-  //   .subscribe(response => {
-  //     console.log(response);
-  //   },
-  //   error => {
-  //     console.log(error);
-  // });
+  // onFileSelected(event) {
+  //   console.log(event);
+  //   this.selectedFile = event.target.files[0];
   // }
 
+  // onUpload() {
+  //   const fd = new FormData();
+  //   fd.append('food_img_1', this.selectedFile, this.selectedFile.name);
+  //   console.log(this.selectedFile.name);
+  //   this.http.uploadImage('upload', fd)
+  //   .subscribe(
+  //     response => {
+  //       console.log(response);
+  //       this.dummyImgId = response;
+  //       this.imgId = this.dummyImgId.data._id;
+  //       console.log(this.imgId);
+  //       this.createFoodForm.value.upImgId = this.imgId;
+  //       this.submitUserDetails();
+  //       console.log(this.createFoodForm.value.upImgId);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
+}

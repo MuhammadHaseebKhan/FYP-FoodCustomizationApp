@@ -3,33 +3,11 @@ import { HttpServiceService } from '../services/http-service.service';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-all-categories-only',
+  templateUrl: './all-categories-only.component.html',
+  styleUrls: ['./all-categories-only.component.css']
 })
-export class CategoryComponent implements OnInit {
-
-  // Ant design Modal
-
-  // isVisible = false;
-  // isOkLoading = false;
-
-  // showModal(): void {
-  //   this.isVisible = true;
-  // }
-
-  // handleOk(): void {
-  //   this.isOkLoading = true;
-  //   window.setTimeout(() => {
-  //     this.isVisible = false;
-  //     this.isOkLoading = false;
-  //   }, 3000);
-  // }
-
-  // handleCancel(): void {
-  //   this.isVisible = false;
-  // }
-
+export class AllCategoriesOnlyComponent implements OnInit {
   alertOk = false;
   alertCancel = false;
   categoriesArray: any = [];

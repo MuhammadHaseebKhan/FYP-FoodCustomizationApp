@@ -24,12 +24,14 @@
               <input formControlName="price" type="number" matInput placeholder="price">
             </mat-form-field>
   
-            <mat-form-field>
+            <!-- <mat-form-field>
               <input formControlName="upImgId" matInput placeholder="upload image">
-            </mat-form-field>
+            </mat-form-field> -->
+            <input class="chooseFileButton" formControlName="upImgId" type="file" (change)="onFileSelected($event)"/>
+            <!-- <button type="button" (click)="onUpload()">upload</button> -->
 
             <br>
-            <button class="submit-button mat-raised-button" [disabled]="createFoodForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="submitUserDetails()">Submit</button>
+            <button class="submit-button mat-raised-button" [disabled]="createFoodForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="onUpload()">Submit</button>
   
             <!-- <mat-form-field>
           <textarea matInput placeholder="Textarea"></textarea>

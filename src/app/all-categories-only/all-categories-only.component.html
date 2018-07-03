@@ -2,7 +2,7 @@
 
   <div>
     <h2 class="allCategoriesHeading"> All Categories:</h2>
-    <ul (click)="clickOnCategory($event,category,i)" class="categoriesListContainer" *ngFor="let category of dummyCategoriesArray; index as i">
+    <ul class="categoriesListContainer" *ngFor="let category of dummyCategoriesArray; index as i">
 
     <li> {{category.name}}</li>
     <div class="buttonsContainer">

@@ -85,4 +85,13 @@ export class HttpServiceService {
     return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
   }
 
+  uploadImage(hit, data) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
+  }
+  addNewItem(hit, data) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
+  }
+
 }

@@ -16,6 +16,11 @@ import { CategoryComponent } from './category/category.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { FoodComponent } from './food/food.component';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { CategoryWiseFoodComponent } from './category-wise-food/category-wise-food.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import { ItemComponent } from './item/item.component';
+import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-food.component';
+import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
@@ -39,6 +44,11 @@ const routes: Routes = [
             { path : 'addcategory' , component: AddCategoryComponent},
             { path : 'food' , component: FoodComponent},
             { path : 'addfood' , component: AddFoodComponent},
+            { path : 'categorywisefood/:cid' , component: CategoryWiseFoodComponent},
+            { path : 'items/:cid' , component: ItemComponent},
+            { path : 'additem' , component: AddItemComponent},
+            { path : 'itemsofeachfood' , component: ItemsOfEachFoodComponent},
+            { path : 'allcategories' , component: AllCategoriesOnlyComponent},
         ]
         },
     // { path : 'adminprofile' , component: AdminprofileComponent},

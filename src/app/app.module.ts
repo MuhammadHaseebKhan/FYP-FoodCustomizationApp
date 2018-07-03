@@ -27,6 +27,11 @@ import { CategoryComponent } from './category/category.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { FoodComponent } from './food/food.component';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { CategoryWiseFoodComponent } from './category-wise-food/category-wise-food.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import { ItemComponent } from './item/item.component';
+import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-food.component';
+import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
 
 // import { registerLocaleData } from '@angular/common';
 // import zh from '@angular/common/locales/zh';
@@ -47,7 +52,12 @@ import { AddFoodComponent } from './add-food/add-food.component';
     CategoryComponent,
     AddCategoryComponent,
     FoodComponent,
-    AddFoodComponent
+    AddFoodComponent,
+    CategoryWiseFoodComponent,
+    AddItemComponent,
+    ItemComponent,
+    ItemsOfEachFoodComponent,
+    AllCategoriesOnlyComponent
   ],
   imports: [
     BrowserModule,
