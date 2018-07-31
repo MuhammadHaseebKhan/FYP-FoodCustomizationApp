@@ -1,16 +1,29 @@
 <div class="restaurantListPage">
-
   <div>
-    <h2 class="allRestaurantsHeading"> All Restaurants:</h2>
-    <ul (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
-
-    <li> {{restaurant.name}}</li>
-    <div class="buttonsContainer">
-      <!-- <button class="categoryCrudButtons">Edit</button> -->
-      <button (click)="deleteRestaurant(restaurant,i)" class="categoryCrudButtons">Delete</button>
+    <div class="allRestaurantsHeading">
+        <h2> All Restaurants:</h2>
     </div>
+    <div class="loader" *ngIf="isLoader">
+        <!-- <div class="side-logo">
+            <mat-icon class="brandIcon">local_dining</mat-icon>
+            <h1>Foodistan</h1>
+        </div> -->
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
+
+    <div (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
+
+      <mat-card> 
+        <mat-card-title>{{restaurant.name}}</mat-card-title>
+        <mat-card-content>
+          <div class="crudButtons">
+              <button (click)="deleteRestaurant(restaurant,i)" class="deleteButton">Delete</button>
+              <button (click)="eidtRestaurant(restaurant,i)" class="deleteButton">Edit</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
     
-  </ul>
+    </div>
 </div>
   
   <div (click)="addRestaurant()" class="addRestaurant">

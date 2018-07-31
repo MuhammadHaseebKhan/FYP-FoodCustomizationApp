@@ -14,6 +14,8 @@ export class AllCategoriesOnlyComponent implements OnInit {
   dummyCategoriesArray: any = [];
   categoryId;
   concatenatedUrl;
+  isLoader = false;
+
   constructor(
     private http: HttpServiceService,
     private router: Router
@@ -21,6 +23,7 @@ export class AllCategoriesOnlyComponent implements OnInit {
 
   ngOnInit() {
     // this.callAgain();
+    this.isLoader = true;
     this.getAllCategories();
   }
 
@@ -28,6 +31,7 @@ export class AllCategoriesOnlyComponent implements OnInit {
     return this.http.getRequest('category')
     .subscribe(
       response => {
+        this.isLoader = false;
         this.categoriesArray = response;
         this.dummyCategoriesArray = this.categoriesArray.data;
         // console.log(response);
@@ -35,6 +39,7 @@ export class AllCategoriesOnlyComponent implements OnInit {
         console.log(this.dummyCategoriesArray);
       },
       error => {
+        this.isLoader = false;
         console.log(error);
       }
     );
@@ -70,6 +75,14 @@ export class AllCategoriesOnlyComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  editCategory(category, i) {
+    console.log(category._id);
+    console.log(category.name);
+    this.categoryId = category._id;
+    // console.log(this.categoryId);
+    this.router.navigate(['admin-dashboard/editcategory', this.categoryId]);
   }
 
   addCategory() {

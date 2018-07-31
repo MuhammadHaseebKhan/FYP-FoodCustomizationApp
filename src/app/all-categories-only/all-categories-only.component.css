@@ -32,7 +32,7 @@
  /* margin-right: 20px; */
  display: flex;
  justify-content: space-between;
- width: 120px;
+ width: 160px;
  padding-top: 10px;
 }
 .categoryCrudButtons{
@@ -62,4 +62,18 @@
 }
 .addCategory:hover {
   opacity: 0.7;
+}
+/* .loader{
+  background: radial-gradient(white, #00bcd4) no-repeat;
+  position: absolute;
+  top: 0px;
+  z-index: 100000;
+   height: 100%;
+   width: 100vh;
+  border: 1px solid; 
+} */
+.spinner{
+  /* border: 1px solid green; */
+  margin: auto;
+  margin-top: 200px;
 }

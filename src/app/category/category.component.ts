@@ -73,6 +73,14 @@ export class CategoryComponent implements OnInit {
     // console.log(this.concatenatedUrl);
     this.router.navigate(['admin-dashboard/categorywisefood', this.categoryId]);
   }
+
+  // editCategory(category, i) {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   console.log(category._id);
+  //   console.log(category.name);
+  // }
+
   deleteCategory(category, i) {
     this.categoryId = category._id;
     console.log(this.categoryId);

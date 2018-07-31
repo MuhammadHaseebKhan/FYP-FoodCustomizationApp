@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  isLoader = false;
   hide = true;
   public myControl;
 
@@ -35,10 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   getLogin() {
+    console.log('hello world');
+    this.isLoader = true;
     console.log(this.input);
     this.httpService.login(this.input)
       .subscribe(
         data => {
+          this.isLoader = false;
           if (data.data.role === 'admin' || data.data.role === 'superadmin') {
             console.log(data);
             console.log(data.data.role);
@@ -51,7 +55,8 @@ export class LoginComponent implements OnInit {
           }
         },
         error => {
-          this.flashMessage.show(error, {cssClass: 'alert-danger', timeout: 5000 });
+          this.isLoader = false;
+          this.flashMessage.show('Unauthorized!',  {cssClass: 'alert-danger', timeout: 5000 });
           console.log(error);
         }
       );

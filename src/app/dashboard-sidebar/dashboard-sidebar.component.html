@@ -25,30 +25,36 @@
             </div>
         </mat-nav-list>
         <mat-nav-list *ngIf="isUserRoleAdmin" class="side-nav-list">
+            <div routerLink="/admin-dashboard/newrestaurant" class="navListContainer1">
+                <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
+                <p>Add Restaurant</p>
+            </div>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="isUserRoleAdmin" class="side-nav-list">
           <div routerLink="signup" class="navListContainer2">
               <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
               <p>Add User</p>
           </div>
         </mat-nav-list>  
-        <mat-nav-list class="side-nav-list">
-          <div routerLink="allcategories" class="navListContainer2">
+        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
+          <div routerLink="allcategories" class="navListContainer2-1">
               <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
               <p> All Categories</p>
           </div>
         </mat-nav-list>
-        <mat-nav-list class="side-nav-list">
+        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
           <div routerLink="food" class="navListContainer2-2">
               <img class="navListImage" src="./../../assets/images/get-money.png" alt="card data" />
               <p>All Food</p>
           </div>
         </mat-nav-list>
-        <mat-nav-list class="side-nav-list">
+        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
             <div routerLink="itemsofeachfood" class="navListContainer3">
                 <img class="navListImage" src="./../../assets/images/verified-commercial-list.png" alt="card data" />
                 <p>Items of each Food</p>
             </div>
         </mat-nav-list>
-        <mat-nav-list class="side-nav-list">
+        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
             <div routerLink="category" class="navListContainer4">
                 <img class="navListImage" src="./../../assets/images/maintenance.png" alt="card data" />
                 <p>Category wise Food</p>

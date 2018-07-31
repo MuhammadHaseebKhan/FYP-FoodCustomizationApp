@@ -4,14 +4,35 @@
 }
 
 .allRestaurantsHeading{
-  /* border: 1px solid; */
-  display: inline-block;
-  margin: 15px;
-  margin-left: 280px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: white;
+  width: 400px;
+  height: 60px;
+  background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+  /* display: inline-block; */
+  /* margin: 15px; */
+  text-align: center;
+  margin: auto;
   margin-top: 50px;
+  margin-bottom: 60px;
+}
+.allRestaurantsHeading > h2 {
+  margin: auto;
+  margin-top: 10px;
+  /* color: red; */
+}
+.restaurantsListContainer{
+  /* border: 1px solid red; */
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+.mat-card:not([class*=mat-elevation-z]){
+  border: 1px solid #0288d1;
 }
 
-.restaurantsListContainer{
+/* .restaurantsListContainer{
   border: 1px solid gray;
   height: 50px;
   width: 750px;
@@ -19,31 +40,31 @@
   margin-top: 10px;
   display: flex;
   border-radius: 10px;
-}
+} */
 .restaurantsListContainer > li{
   /* color: blue; */
   font-size: 18px;
   padding-top: 10px;
   cursor: pointer;
 }
-.buttonsContainer{
+mat-card-title{
+  /* border: 1px solid red; */
+  /* text-align: center; */
+}
+.crudButtons{
   /* border: 1px solid green; */
-  margin-left: auto;
-  /* margin-right: 20px; */
-  display: flex;
-  justify-content: space-between;
-  width: 120px;
-  padding-top: 10px;
+  /* text-align: right; */
 }
  
-.categoryCrudButtons{
+.deleteButton{
   width: 60px;
   border: 1px solid;
   border-radius: 5px;
   height: 30px;
   background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
   color: white;
-  margin: 0px auto;
+  margin-right: 10px;
+  /* margin: 0px auto; */
 }
 
 .addRestaurant{
@@ -62,4 +83,9 @@
 }
 .addRestaurant:hover {
   opacity: 0.7;
+}
+.spinner{
+  /* border: 1px solid green; */
+  margin: auto;
+  margin-top: 200px;
 }

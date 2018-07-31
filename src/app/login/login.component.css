@@ -77,3 +77,42 @@ mat-form-field{
 .mat-input-ripple{
   background: red !important;
 }
+.loader{
+  /* background: url('../../assets/images/blocks.jpg'); */
+  /* background-color: #00bcd4; */
+  background: radial-gradient(white, #00bcd4) no-repeat;
+  position: absolute;
+  top: 0px;
+  z-index: 100000;
+   height: 100%;
+   width: 100%;
+  border: 1px solid red; 
+}
+.spinner{
+  /* border: 1px solid green; */
+  margin: auto;
+  margin-top: 250px;
+}
+/* .mat-progress-spinner circle, .mat-spinner circle{
+  stroke: red;
+} */
+
+/* .side-logo{
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  color: white;
+  width: 260px;
+  height: 80px;
+  margin-bottom: 60px;
+  background: linear-gradient(45deg, #1691f5 0%, #6c94f1 100%)
+}
+.brandIcon{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+h1{
+  margin-left: 10px;
+  font-size: 32px;
+  margin-top: 15px;
+} */

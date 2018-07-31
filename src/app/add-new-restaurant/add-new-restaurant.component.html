@@ -8,15 +8,19 @@
       <div class="example-container">
         <form role="form" [formGroup]="createRestaurantForm">
           <mat-form-field>
-            <input formControlName="name"matInput placeholder="Enter Restaurant Name">
+              <label class="requiredFields">*</label> <input formControlName="name"matInput placeholder="Enter Restaurant Name">
           </mat-form-field>
 
           <mat-form-field>
-            <input formControlName="branch" matInput placeholder="Enter Branch">
+              <label class="requiredFields">*</label> <input formControlName="email"matInput placeholder="Enter email">
           </mat-form-field>
 
           <mat-form-field>
-            <input formControlName="code" matInput placeholder="Enter Code">
+              <label class="requiredFields">*</label> <input formControlName="branch" matInput placeholder="Enter Branch">
+          </mat-form-field>
+
+          <mat-form-field>
+              <label class="requiredFields">*</label> <input formControlName="code" matInput placeholder="Enter Code">
           </mat-form-field>
 
           <!-- <mat-form-field>
@@ -27,14 +31,14 @@
         <input [(ngModel)]="input.ownerName" matInput placeholder="Assign User">
       </mat-form-field> -->
 
-          <mat-form-field>
+          <!-- <mat-form-field>
             <input type="text" placeholder="Assign User" matInput [formControl]="myControl" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
               <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                 {{ option.email}}
               </mat-option>
             </mat-autocomplete>
-          </mat-form-field>
+          </mat-form-field> -->
 
           <!-- <mat-form-field>
         <mat-icon matPrefix>lock</mat-icon>

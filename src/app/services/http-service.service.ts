@@ -61,6 +61,16 @@ export class HttpServiceService {
     });
   }
 
+  put(hit, data) {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    // const headers = this.createAuthorizationHeader(new HttpHeaders());
+    return this.http.put(`${this.baseUrl}${hit}`, data, { headers: headers })
+      .map(response => {
+        console.log(response);
+        return response;
+      });
+  }
+
   createRestaurant(hit, data) {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
     return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });

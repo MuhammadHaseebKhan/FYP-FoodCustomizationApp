@@ -1,12 +1,20 @@
 
 <div class="login-page">
 
+        <div class="loader" *ngIf="isLoader">
+                <!-- <div class="side-logo">
+                    <mat-icon class="brandIcon">local_dining</mat-icon>
+                    <h1>Foodistan</h1>
+                </div> -->
+                <mat-spinner class="spinner"></mat-spinner>
+        </div>
+
     <mat-card class="login-form-container">
    
         <h3 class="form-heading"> Login Form</h3>
         <div class="form-fields">
             <mat-form-field>
-                <input [(ngModel)]="input.email" name="email" matInput placeholder=" &nbsp; &nbsp;Email">
+                <input [(ngModel)]="input.email" (keyup.Enter)="getLogin()" name="email" matInput placeholder=" &nbsp; &nbsp;Email">
                 <mat-icon matPrefix>face</mat-icon>
             </mat-form-field>
 

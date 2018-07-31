@@ -1,0 +1,16 @@
+<mat-card class="addCategoryCard">
+    <mat-card-title>
+      Edit Category
+    </mat-card-title>
+    <mat-card-content>
+      <div class="example-container">
+
+          <mat-form-field>
+            <input [(ngModel)]="input.name" (keyup.enter)="editCategory()" matInput placeholder="Enter Category Name">
+          </mat-form-field>
+  
+          <button class="submit-button mat-raised-button" (click)="editCategory()">Submit</button>
+  
+      </div>
+    </mat-card-content>
+  </mat-card>

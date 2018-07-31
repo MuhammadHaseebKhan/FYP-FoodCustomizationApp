@@ -32,6 +32,8 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { ItemComponent } from './item/item.component';
 import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-food.component';
 import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 
 // import { registerLocaleData } from '@angular/common';
 // import zh from '@angular/common/locales/zh';
@@ -57,7 +59,9 @@ import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories
     AddItemComponent,
     ItemComponent,
     ItemsOfEachFoodComponent,
-    AllCategoriesOnlyComponent
+    AllCategoriesOnlyComponent,
+    EditCategoryComponent,
+    EditRestaurantComponent
   ],
   imports: [
     BrowserModule,

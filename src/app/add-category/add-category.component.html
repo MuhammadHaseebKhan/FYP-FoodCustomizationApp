@@ -1,32 +1,18 @@
+<div class="addCategoryPage">
 <mat-card class="addCategoryCard">
-  <mat-card-title>
+  <mat-card-title class="cardTitle">
     Add New Category
   </mat-card-title>
   <mat-card-content>
+    <br>
     <div class="example-container">
         <mat-form-field>
-          <input [(ngModel)]="input.name" matInput placeholder="Enter Category Name">
+          <input [(ngModel)]="input.name" (keyup.enter)="addCategory()" matInput placeholder="Enter Category Name">
         </mat-form-field>
-
-        <!-- <mat-form-field>
-          <input formControlName="branch" matInput placeholder="Enter Branch">
-        </mat-form-field>
-
-        <mat-form-field>
-          <input formControlName="code" matInput placeholder="Enter Code">
-        </mat-form-field>
-
-        <mat-form-field>
-          <input type="text" placeholder="Assign User" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-              {{ option.email}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field> -->
-
+        
         <button class="submit-button mat-raised-button" (click)="addCategory()">Submit</button>
 
     </div>
   </mat-card-content>
 </mat-card>
+</div>

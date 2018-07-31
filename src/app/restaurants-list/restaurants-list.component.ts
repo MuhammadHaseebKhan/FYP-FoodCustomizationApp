@@ -17,6 +17,8 @@ export class RestaurantsListComponent implements OnInit {
   concatenatedUrl;
   restId;
   dummyRestaurantsArray;
+  isLoader = false;
+  restaurantId;
 
   constructor(
     private http: HttpServiceService,
@@ -24,6 +26,7 @@ export class RestaurantsListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     this.getAllRestaurants();
   }
 
@@ -32,6 +35,7 @@ export class RestaurantsListComponent implements OnInit {
       .subscribe(response => {
         this.dummyrestaurantsArray = response;
         this.restaurantsArray = this.dummyrestaurantsArray.data;
+        this.isLoader = false;
         // console.log(data);
         console.log(this.restaurantsArray);
         // console.log(this.options.data);
@@ -70,6 +74,10 @@ export class RestaurantsListComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  eidtRestaurant(restaurant, i) {
+    this.restaurantId = restaurant._id;
+    this.router.navigate(['admin-dashboard/editrestaurant', this.restaurantId]);
   }
 
   addRestaurant() {

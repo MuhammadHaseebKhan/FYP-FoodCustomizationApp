@@ -84,9 +84,17 @@ h1{
 }
 .navListContainer2{
     display: flex;
-    width: 160px;
+    width: 125px;
     height: 40px;
     /* border: 1px solid red; */
+    margin-left: 30px; 
+    justify-content: space-between;
+}
+.navListContainer2-1{
+    display: flex;
+    width: 160px;
+    height: 40px;
+    /* border: 1px solid blue; */
     margin-left: 30px; 
     justify-content: space-between;
 }

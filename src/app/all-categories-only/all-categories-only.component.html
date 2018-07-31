@@ -7,10 +7,18 @@
     <li> {{category.name}}</li>
     <div class="buttonsContainer">
       <!-- <button class="categoryCrudButtons">Edit</button> -->
+      <button (click)="editCategory(category,i)" class="categoryCrudButtons">Edit</button>
       <button (click)="deleteCategory(category,i)" class="categoryCrudButtons">Delete</button>
     </div>
     
   </ul>
+</div>
+<div class="loader" *ngIf="isLoader">
+    <!-- <div class="side-logo">
+        <mat-icon class="brandIcon">local_dining</mat-icon>
+        <h1>Foodistan</h1>
+    </div> -->
+    <mat-spinner class="spinner"></mat-spinner>
 </div>
   
   <div (click)="addCategory()" class="addCategory">

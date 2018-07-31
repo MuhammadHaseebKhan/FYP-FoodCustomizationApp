@@ -21,6 +21,8 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { ItemComponent } from './item/item.component';
 import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-food.component';
 import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
@@ -49,6 +51,8 @@ const routes: Routes = [
             { path : 'additem' , component: AddItemComponent},
             { path : 'itemsofeachfood' , component: ItemsOfEachFoodComponent},
             { path : 'allcategories' , component: AllCategoriesOnlyComponent},
+            { path : 'editcategory/:cid' , component: EditCategoryComponent},
+            { path : 'editrestaurant/:cid' , component: EditRestaurantComponent},
         ]
         },
     // { path : 'adminprofile' , component: AdminprofileComponent},

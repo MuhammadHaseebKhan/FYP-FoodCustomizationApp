@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { map, startWith } from 'rxjs/operators';
 import { HttpServiceService } from '../services/http-service.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-restaurant',
@@ -26,17 +27,21 @@ export class AddNewRestaurantComponent implements OnInit {
   createRestaurantForm: FormGroup;
   filteredOptions: Observable<any[]>;
 
+
   constructor(
     private httpService: HttpServiceService,
     public fb: FormBuilder,
+    private router: Router,
   ) {
     this.createForm();
   }
   createForm() {
     this.createRestaurantForm = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
       branch: ['', Validators.required],
       code: ['', Validators.required],
+      // upImgId: ['', Validators.required]
       // countryId: ['', Validators.required],
       // uId: ['', Validators.required],
     });
@@ -72,10 +77,12 @@ export class AddNewRestaurantComponent implements OnInit {
   }
 
   submitRestaurantDetails() {
+    console.log(this.createRestaurantForm.value);
     // this.createRestaurantForm.value.uId = this.myControl.value._id;
     this.httpService.createRestaurant('restaurant', this.createRestaurantForm.value)
       .subscribe(data => {
         console.log(data);
+        this.router.navigate(['admin-dashboard/restaurantslist']);
       },
         error => {
           console.log(error);
@@ -87,4 +94,5 @@ export class AddNewRestaurantComponent implements OnInit {
     // this.input.uId = data._id;
     return data ? data.email : data;
   }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../services/http-service.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -16,6 +17,7 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(
     private httpService: HttpServiceService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class AddCategoryComponent implements OnInit {
     this.httpService.addNewCategory('category', this.input)
     .subscribe(response => {
       console.log(response);
+      this.router.navigate(['admin-dashboard/allcategories']);
     },
     error => {
       console.log(error);
