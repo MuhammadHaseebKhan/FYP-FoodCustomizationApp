@@ -20,6 +20,7 @@
 .allRestaurantsHeading > h2 {
   margin: auto;
   margin-top: 10px;
+  color: white;
   /* color: red; */
 }
 .restaurantsListContainer{

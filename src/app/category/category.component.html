@@ -11,7 +11,14 @@
     </div>
     
   </ul>
-</div>
+  </div>
+  <div class="loader" *ngIf="isLoader">
+    <!-- <div class="side-logo">
+        <mat-icon class="brandIcon">local_dining</mat-icon>
+        <h1>Foodistan</h1>
+    </div> -->
+    <mat-spinner class="spinner"></mat-spinner>
+  </div>
   
   <div (click)="addCategory()" class="addCategory">
     <img src="./../../assets/images/add.png" alt="card data" />

@@ -9,39 +9,21 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
-  // Ant design Modal
-
-  // isVisible = false;
-  // isOkLoading = false;
-
-  // showModal(): void {
-  //   this.isVisible = true;
-  // }
-
-  // handleOk(): void {
-  //   this.isOkLoading = true;
-  //   window.setTimeout(() => {
-  //     this.isVisible = false;
-  //     this.isOkLoading = false;
-  //   }, 3000);
-  // }
-
-  // handleCancel(): void {
-  //   this.isVisible = false;
-  // }
-
   alertOk = false;
   alertCancel = false;
   categoriesArray: any = [];
   dummyCategoriesArray: any = [];
   categoryId;
   concatenatedUrl;
+  isLoader = false;
+
   constructor(
     private http: HttpServiceService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     // this.callAgain();
     this.getAllCategories();
   }
@@ -52,6 +34,7 @@ export class CategoryComponent implements OnInit {
       response => {
         this.categoriesArray = response;
         this.dummyCategoriesArray = this.categoriesArray.data;
+        this.isLoader = false;
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyCategoriesArray);

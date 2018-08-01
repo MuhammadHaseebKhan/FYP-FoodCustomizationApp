@@ -62,3 +62,8 @@
 .addCategory:hover {
   opacity: 0.7;
 }
+.spinner{
+  /* border: 1px solid green; */
+  margin: auto;
+  margin-top: 200px;
+}

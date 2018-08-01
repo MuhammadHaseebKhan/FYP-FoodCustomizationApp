@@ -18,6 +18,8 @@ export class ItemComponent implements OnInit {
   categoriesArray: any = [];
   dummyCategoriesArray: any = [];
   categoryId;
+  isLoader = false;
+
   constructor(
     private http: HttpServiceService,
     private router: Router,
@@ -25,6 +27,7 @@ export class ItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     this.activatedRoute.params.subscribe((params: Params) => {
       this.foodId = params['cid'];
     });
@@ -40,6 +43,7 @@ export class ItemComponent implements OnInit {
       response => {
         this.FoodArray = response;
         this.dummyFoodArray = this.FoodArray.data;
+        this.isLoader = false;
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyFoodArray);

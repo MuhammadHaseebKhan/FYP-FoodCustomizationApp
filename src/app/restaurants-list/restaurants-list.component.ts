@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../services/http-service.service';
 import { RouterModule, Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-restaurants-list',
@@ -22,7 +23,8 @@ export class RestaurantsListComponent implements OnInit {
 
   constructor(
     private http: HttpServiceService,
-    private router: Router
+    private router: Router,
+    private flashMessage: FlashMessagesService,
   ) { }
 
   ngOnInit() {
@@ -68,6 +70,7 @@ export class RestaurantsListComponent implements OnInit {
         data.splice(i, 1);
         console.log(i);
         this.restaurantsArray = [...data];
+        this.flashMessage.show('Restaurant has been deleted', {cssClass: 'alert-success', timeout: 3000 });
         console.log(response);
       },
       error => {

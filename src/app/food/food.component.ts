@@ -14,12 +14,15 @@ export class FoodComponent implements OnInit {
   dummyFoodArray: any = [];
   foodId;
   concatenatedUrl;
+  isLoader = false;
+
   constructor(
     private http: HttpServiceService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     this.getAllFood();
   }
 
@@ -29,6 +32,7 @@ export class FoodComponent implements OnInit {
       response => {
         this.FoodArray = response;
         this.dummyFoodArray = this.FoodArray.data;
+        this.isLoader = false;
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyFoodArray);

@@ -12,6 +12,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class EditRestaurantComponent implements OnInit {
 
+  isLoader = false;
   restaurantId;
   concatenatedUrl;
   dummyResponseArray;
@@ -42,6 +43,7 @@ export class EditRestaurantComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoader = true;
     this.activatedRoute.params.subscribe((params: Params) => {
       this.restaurantId = params['cid'];
       console.log(this.restaurantId);
@@ -54,6 +56,7 @@ export class EditRestaurantComponent implements OnInit {
     this.http.getRequest(this.concatenatedUrl)
     .subscribe(
       response => {
+        this.isLoader = false;
         // console.log(response);
         this.dummyResponseArray = response;
         this.responseArray = this.dummyResponseArray.data;

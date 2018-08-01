@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule, BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
@@ -34,6 +34,11 @@ import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-foo
 import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
+// import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+// import { registerLocaleData } from '@angular/common';
+// import zh from '@angular/common/locales/zh';
+
+// registerLocaleData(zh);
 
 // import { registerLocaleData } from '@angular/common';
 // import zh from '@angular/common/locales/zh';
@@ -73,9 +78,13 @@ import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.compo
     HttpClientModule,
     HttpModule,
     FlashMessagesModule,
+    BrowserAnimationsModule,
+    // NgZorroAntdModule.forRoot()
     // NgZorroAntdModule
   ],
-  providers: [HttpServiceService, ValidateService, FlashMessagesService, AuthService, AuthGuard],
+  providers: [HttpServiceService, ValidateService, FlashMessagesService, AuthService, AuthGuard,
+    // { provide: NZ_I18N, useValue: zh_CN }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
