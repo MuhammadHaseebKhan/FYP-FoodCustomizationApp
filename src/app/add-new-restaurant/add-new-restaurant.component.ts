@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { map, startWith } from 'rxjs/operators';
 import { HttpServiceService } from '../services/http-service.service';
 import { RouterModule, Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-add-new-restaurant',
@@ -29,6 +30,7 @@ export class AddNewRestaurantComponent implements OnInit {
 
 
   constructor(
+    private flashMessage: FlashMessagesService,
     private httpService: HttpServiceService,
     public fb: FormBuilder,
     private router: Router,
@@ -82,6 +84,7 @@ export class AddNewRestaurantComponent implements OnInit {
     this.httpService.createRestaurant('restaurant', this.createRestaurantForm.value)
       .subscribe(data => {
         console.log(data);
+        this.flashMessage.show('Restaurant created successfully!', {cssClass: 'alert-success', timeout: 5000 });
         this.router.navigate(['admin-dashboard/restaurantslist']);
       },
         error => {

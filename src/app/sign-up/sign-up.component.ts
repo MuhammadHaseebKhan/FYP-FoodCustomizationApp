@@ -145,7 +145,9 @@ export class SignUpComponent implements OnInit {
     console.log(this.createRestaurantForm.value);
     this.http.createRestaurant(this.registerUserHit, this.createRestaurantForm.value)
       .subscribe(data => {
+        this.flashMessage.show('You have successfully registered!', {cssClass: 'alert-success', timeout: 5000 });
         console.log(data);
+        this.router.navigate(['admin-dashboard/restaurantslist']);
       },
         error => {
           console.log(error);
