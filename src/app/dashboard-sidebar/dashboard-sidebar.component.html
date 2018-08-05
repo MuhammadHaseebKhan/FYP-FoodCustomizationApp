@@ -12,50 +12,50 @@
           <mat-icon class="brandIcon">local_dining</mat-icon>
           <h1>Foodistan</h1>
         </mat-nav-list> 
-        <mat-nav-list class="side-nav-list">
-          <div routerLink="/admin-dashboard/adminprofile" class="navListContainer">
+        <mat-nav-list routerLink="/admin-dashboard/adminprofile" class="side-nav-list">
+          <div class="navListContainer">
               <img class="navListImage" src="./../../assets/images/man-user.png" alt="card data" />
               <p>My Profile</p>
           </div>
         </mat-nav-list>  
-        <mat-nav-list *ngIf="isUserRoleAdmin" class="side-nav-list">
-            <div routerLink="/admin-dashboard/restaurantslist" class="navListContainer1">
+        <mat-nav-list routerLink="/admin-dashboard/restaurantslist" *ngIf="isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer1">
                 <img class="navListImage" src="./../../assets/images/plate-fork-and-knife.png" alt="card data" />
                 <p>Restaurants List</p>
             </div>
         </mat-nav-list>
-        <mat-nav-list *ngIf="isUserRoleAdmin" class="side-nav-list">
-            <div routerLink="/admin-dashboard/newrestaurant" class="navListContainer1">
+        <mat-nav-list routerLink="/admin-dashboard/newrestaurant" *ngIf="isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer1">
                 <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
                 <p>Add Restaurant</p>
             </div>
         </mat-nav-list>
-        <mat-nav-list *ngIf="isUserRoleAdmin" class="side-nav-list">
-          <div routerLink="signup" class="navListContainer2">
+        <mat-nav-list routerLink="signup" *ngIf="isUserRoleAdmin" class="side-nav-list">
+          <div class="navListContainer2">
               <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
               <p>Add User</p>
           </div>
         </mat-nav-list>  
-        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
-          <div routerLink="allcategories" class="navListContainer2-1">
+        <mat-nav-list routerLink="allcategories" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+          <div class="navListContainer2-1">
               <img class="navListImage" src="./../../assets/images/plus-sign-in-a-black-circle.png" alt="card data" />
               <p> All Categories</p>
           </div>
         </mat-nav-list>
-        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
-          <div routerLink="food" class="navListContainer2-2">
+        <mat-nav-list routerLink="food" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+          <div class="navListContainer2-2">
               <img class="navListImage" src="./../../assets/images/get-money.png" alt="card data" />
               <p>All Food</p>
           </div>
         </mat-nav-list>
-        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
-            <div routerLink="itemsofeachfood" class="navListContainer3">
+        <mat-nav-list routerLink="itemsofeachfood" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer3">
                 <img class="navListImage" src="./../../assets/images/verified-commercial-list.png" alt="card data" />
                 <p>Items of each Food</p>
             </div>
         </mat-nav-list>
-        <mat-nav-list *ngIf="!isUserRoleAdmin" class="side-nav-list">
-            <div routerLink="category" class="navListContainer4">
+        <mat-nav-list routerLink="category" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer4">
                 <img class="navListImage" src="./../../assets/images/maintenance.png" alt="card data" />
                 <p>Category wise Food</p>
             </div>

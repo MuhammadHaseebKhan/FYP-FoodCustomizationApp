@@ -23,6 +23,8 @@ import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-foo
 import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
+import { EditFoodComponent } from './edit-food/edit-food.component';
+import { OrderComponent } from './order/order.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
@@ -38,6 +40,7 @@ const routes: Routes = [
             { path: 'about', component: AboutComponent },
             { path: 'home', component: HomeComponent },
             { path : 'signup' , component: SignUpComponent},
+            { path : 'order' , component: OrderComponent},
             { path : 'category' , component: CategoryComponent,
                 children: [
                 ]
@@ -53,6 +56,7 @@ const routes: Routes = [
             { path : 'allcategories' , component: AllCategoriesOnlyComponent},
             { path : 'editcategory/:cid' , component: EditCategoryComponent},
             { path : 'editrestaurant/:cid' , component: EditRestaurantComponent},
+            { path : 'editfood/:cid' , component: EditFoodComponent},
         ]
         },
     // { path : 'adminprofile' , component: AdminprofileComponent},

@@ -15,19 +15,19 @@
         <div class="example-container">
           <form role="form" [formGroup]="createRestaurantForm">
             <mat-form-field>
-                <label class="requiredFields">*</label> <input [(ngModel)]="createRestaurantForm.value.name" formControlName="name"matInput placeholder="Enter Restaurant Name">
+                <label class="requiredFields">*</label> <input [(ngModel)]="createRestaurantForm.value.name" formControlName="name" matInput placeholder="Enter Restaurant Name">
             </mat-form-field>
   
             <mat-form-field>
-                <label class="requiredFields">*</label> <input formControlName="email"matInput placeholder="Enter email">
+                <label class="requiredFields">*</label> <input [(ngModel)]="restaurantemail" formControlName="email" matInput placeholder="Enter email">
             </mat-form-field>
   
             <mat-form-field>
-                <label class="requiredFields">*</label> <input formControlName="branch" matInput placeholder="Enter Branch">
+                <label class="requiredFields">*</label> <input [(ngModel)]="restaurantBranch" formControlName="branch" matInput placeholder="Enter Branch">
             </mat-form-field>
   
             <mat-form-field>
-                <label class="requiredFields">*</label> <input formControlName="code" matInput placeholder="Enter Code">
+                <label class="requiredFields">*</label> <input [(ngModel)]="restaurantCode" formControlName="code" matInput placeholder="Enter Code">
             </mat-form-field>
   
             <!-- <mat-form-field>

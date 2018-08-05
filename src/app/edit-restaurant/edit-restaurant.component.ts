@@ -18,6 +18,9 @@ export class EditRestaurantComponent implements OnInit {
   dummyResponseArray;
   responseArray;
   restaurantName;
+  restaurantemail;
+  restaurantBranch;
+  restaurantCode;
   myControl: FormControl = new FormControl();
   createRestaurantForm: FormGroup;
 
@@ -62,8 +65,17 @@ export class EditRestaurantComponent implements OnInit {
         this.responseArray = this.dummyResponseArray.data;
         console.log(this.responseArray);
         this.restaurantName = this.responseArray.name;
+        console.log(this.restaurantName);
+        this.restaurantemail = this.responseArray.email;
+        console.log(this.restaurantemail);
+        this.restaurantBranch = this.responseArray.branch;
+        this.restaurantCode = this.responseArray.code;
         this.createRestaurantForm.value.name = this.restaurantName;
         console.log(this.createRestaurantForm.value.name);
+        this.createRestaurantForm.value.email = this.restaurantemail;
+        console.log(this.createRestaurantForm.value.email);
+        this.createRestaurantForm.value.branch = this.restaurantBranch;
+        this.createRestaurantForm.value.code = this.restaurantCode;
 
         // this.input.name = this.restaurantName;
       },
@@ -73,11 +85,13 @@ export class EditRestaurantComponent implements OnInit {
     );
   }
   editRestaurant() {
+    this.isLoader = true;
     this.http.put(this.concatenatedUrl, this.createRestaurantForm.value)
     .subscribe(
       response => {
+        this.isLoader = false;
         console.log(response);
-        this.router.navigate(['admin-dashboard/allcategories']);
+        this.router.navigate(['admin-dashboard/restaurantslist']);
       },
       error => {
         console.log(error);

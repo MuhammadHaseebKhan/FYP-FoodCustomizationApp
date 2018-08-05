@@ -11,9 +11,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ItemComponent implements OnInit {
   alertOk = false;
   alertCancel = false;
-  FoodArray: any = [];
-  dummyFoodArray: any = [];
+  itemArray: any = [];
+  dummyItemArray: any = [];
   foodId;
+  itemId;
   concatenatedUrl;
   categoriesArray: any = [];
   dummyCategoriesArray: any = [];
@@ -36,46 +37,40 @@ export class ItemComponent implements OnInit {
     }
 
   getItemByFoodId() {
-    const categoryWiseFoodUrl = 'item/list/' + this.foodId;
-    console.log(categoryWiseFoodUrl);
-    return this.http.getRequest(categoryWiseFoodUrl)
+    const foodWiseItemsUrl = 'item/list/' + this.foodId;
+    console.log(foodWiseItemsUrl);
+    return this.http.getRequest(foodWiseItemsUrl)
     .subscribe(
       response => {
-        this.FoodArray = response;
-        this.dummyFoodArray = this.FoodArray.data;
+        this.itemArray = response;
+        this.dummyItemArray = this.itemArray.data;
         this.isLoader = false;
         // console.log(response);
         // console.log(this.categoriesArray.data);
-        console.log(this.dummyFoodArray);
+        console.log(this.dummyItemArray);
       },
       error => {
         console.log(error);
       }
     );
   }
-  clickOnCategory(event, food, i) {
-    // console.log(food);
-    // const dummyIndex = i;
-    // console.log(i);
-    // this.foodId = food._id;
-    // console.log(this.foodId);
-    // this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/category/' + this.foodId;
-    // console.log(this.concatenatedUrl);
-    // this.router.navigate(['admin-dashboard/items']);
+  clickOnItem(event, item, i) {
+   console.log(item.name);
+   console.log(item._id);
   }
-  deleteFood(food, i) {
-    this.foodId = food._id;
-    console.log(this.foodId);
-    this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/food/' + this.foodId;
+  deleteItem(item, i) {
+    this.itemId = item._id;
+    console.log(this.itemId);
+    this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/item/' + this.itemId;
     console.log(this.concatenatedUrl);
     window.alert('Are you sure?');
     this.http.delete(this.concatenatedUrl)
     .subscribe(
       response => {
-        const data = [...this.dummyFoodArray];
+        const data = [...this.dummyItemArray];
         data.splice(i, 1);
         console.log(i);
-        this.dummyFoodArray = [...data];
+        this.dummyItemArray = [...data];
         console.log(response);
       },
       error => {

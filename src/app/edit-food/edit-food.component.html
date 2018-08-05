@@ -2,34 +2,33 @@
 
   <mat-card class="addRestaurantCard">
     <mat-card-title>
-      Add Items
+      Edit Food
     </mat-card-title>
     <mat-card-content>
       <div class="example-container">
-        <form role="form" [formGroup]="createItemForm">
+        <form role="form" [formGroup]="createFoodForm">
           <mat-form-field>
-            <input formControlName="name" matInput placeholder="Enter Name">
+            <input [(ngModel)]="foodName" formControlName="name" matInput placeholder="Enter Name">
           </mat-form-field>
 
-          <mat-form-field>
-              <input type="text" placeholder="Select Food" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <!-- <mat-form-field>
+              <input type="text" placeholder="Assign Category" matInput [formControl]="myControl" [matAutocomplete]="auto">
               <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                   {{ option.name}}
                 </mat-option>
               </mat-autocomplete>
-          </mat-form-field>
+          </mat-form-field> -->
 
           <mat-form-field>
-            <input formControlName="price" type="number" matInput placeholder="price">
+            <input [(ngModel)]="foodPrice" formControlName="price" type="number" matInput placeholder="price">
           </mat-form-field>
 
           <!-- <mat-form-field>
             <input formControlName="upImgId" matInput placeholder="upload image">
           </mat-form-field> -->
-          <!-- <input class="chooseFileButton" formControlName="upImgId" type="file" (change)="onFileSelected($event)"/> -->
+          <input class="chooseFileButton" formControlName="upImgId" type="file" (change)="onFileSelected($event)"/>
           <!-- <button type="button" (click)="onUpload()">upload</button> -->
-
           <div class="loader" *ngIf="isLoader">
               <!-- <div class="side-logo">
                   <mat-icon class="brandIcon">local_dining</mat-icon>
@@ -38,7 +37,7 @@
               <mat-spinner class="spinner"></mat-spinner>
           </div>
           <br>
-          <button class="submit-button mat-raised-button" [disabled]="createItemForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="submitUserDetails()">Submit</button>
+          <button class="submit-button mat-raised-button" [disabled]="createFoodForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="onUpload()">Submit</button>
 
           <!-- <mat-form-field>
         <textarea matInput placeholder="Textarea"></textarea>

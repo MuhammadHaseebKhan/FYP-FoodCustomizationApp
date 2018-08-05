@@ -2,12 +2,36 @@
   border: 1px solid transparent;
   height: auto;
 }
+.allCategoriesHeading2{
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: white;
+  width: 400px;
+  height: 60px;
+  background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+  /* display: inline-block; */
+  /* margin: 15px; */
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.allCategoriesHeading2 > h2 {
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  /* color: red; */
+}
+
 
 .allCategoriesHeading{
   /* border: 1px solid; */
-  display: inline-block;
-  margin: 15px;
-  margin-left: 280px;
+  width: 700px;
+  /* display: inline-block; */
+  /* margin: 15px; */
+  /* margin-left: 280px; */
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .categoriesListContainer{

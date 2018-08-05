@@ -38,6 +38,7 @@ export class AddFoodComponent implements OnInit {
   };
   imgId;
   dummyImgId;
+  isLoader = false;
 
   constructor(
     private router: Router,
@@ -110,6 +111,8 @@ export class AddFoodComponent implements OnInit {
     console.log(this.createFoodForm.value);
     this.http.addNewFood(this.registerFoodHit, this.createFoodForm.value)
       .subscribe(data => {
+        this.isLoader = false;
+        this.router.navigate(['/admin-dashboard/food']);
         console.log(data);
       },
         error => {
@@ -129,6 +132,7 @@ export class AddFoodComponent implements OnInit {
   }
 
   onUpload() {
+    this.isLoader = true;
     const fd = new FormData();
     fd.append('food_img_1', this.selectedFile, this.selectedFile.name);
     console.log(this.selectedFile.name);

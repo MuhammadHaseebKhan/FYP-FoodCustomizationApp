@@ -1,0 +1,46 @@
+.orderPage{
+  border: 1px solid red;
+  /* width: 100%; */
+  /* display: flex; */
+}
+.ordersContainer{
+  border: 3px solid green;
+  width: 1255px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+.orderCard{
+  border: 1px solid #0288d1;
+  width: 400px;
+  /* margin: auto; */
+  margin-top: 40px;
+  /* margin-left: 80px; */
+  /* display: flex; */
+  /* float: left; */
+}
+.header{
+  border: 1px solid transparent;
+  text-align: center;
+}
+.cardTitle{
+  border: 1px solid transparent;
+  margin: auto;
+  margin-left: 80px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.orderCardContent{
+  border: 1px solid transparent;
+  margin-top: 15px;
+}
+.orderCardFooter{
+  border: 1px solid red;
+}
+label{
+  /* border: 1px solid red; */
+  margin-right: 5px;  
+}

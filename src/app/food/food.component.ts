@@ -72,6 +72,10 @@ export class FoodComponent implements OnInit {
       }
     );
   }
+  editFood(food, i) {
+    this.foodId = food._id;
+    this.router.navigate(['admin-dashboard/editfood', this.foodId]);
+  }
 
   addCategory() {
     this.router.navigate(['admin-dashboard/addfood']);

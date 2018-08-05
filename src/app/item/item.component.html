@@ -2,12 +2,12 @@
 
   <div>
     <h2 class="allCategoriesHeading"> All items of Specific Food:</h2>
-    <ul (click)="clickOnCategory(event, food, i)" class="categoriesListContainer" *ngFor="let food of dummyFoodArray; index as i">
+    <ul (click)="clickOnItem(event, item, i)" class="categoriesListContainer" *ngFor="let item of dummyItemArray; index as i">
 
-    <li> {{food.name}}</li>
+    <li> {{item.name}}</li>
     <div class="buttonsContainer">
       <!-- <button class="categoryCrudButtons">Edit</button> -->
-      <button (click)="deleteFood(food,i)" class="categoryCrudButtons">Delete</button>
+      <button (click)="deleteItem(item, i)" class="categoryCrudButtons">Delete</button>
     </div>
     
   </ul>

@@ -29,7 +29,13 @@
             </mat-form-field> -->
             <input class="chooseFileButton" formControlName="upImgId" type="file" (change)="onFileSelected($event)"/>
             <!-- <button type="button" (click)="onUpload()">upload</button> -->
-
+            <div class="loader" *ngIf="isLoader">
+                <!-- <div class="side-logo">
+                    <mat-icon class="brandIcon">local_dining</mat-icon>
+                    <h1>Foodistan</h1>
+                </div> -->
+                <mat-spinner class="spinner"></mat-spinner>
+            </div>
             <br>
             <button class="submit-button mat-raised-button" [disabled]="createFoodForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="onUpload()">Submit</button>
   

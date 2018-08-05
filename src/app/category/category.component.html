@@ -1,7 +1,10 @@
 <div class="categoryPage">
 
   <div>
-    <h2 class="allCategoriesHeading"> All Categories:</h2>
+    <div class="allCategoriesHeading">
+        <h2> All Categories:</h2>
+    </div>
+    <h2 class="allCategoriesHeading2"> *Click on any category to see its foods*</h2>
     <ul (click)="clickOnCategory($event,category,i)" class="categoriesListContainer" *ngFor="let category of dummyCategoriesArray; index as i">
 
     <li> {{category.name}}</li>

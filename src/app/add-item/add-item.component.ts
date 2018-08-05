@@ -16,6 +16,7 @@ import { map, startWith } from 'rxjs/operators';
 export class AddItemComponent implements OnInit {
   public input: any;
 
+  isLoader = false;
   userToken;
   getRestaurantsHit = 'restaurant';
   addItemHit = 'item';
@@ -63,6 +64,7 @@ export class AddItemComponent implements OnInit {
 
 
   ngOnInit() {
+    this.isLoader = true;
     this.getAllFood();
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
@@ -75,6 +77,7 @@ export class AddItemComponent implements OnInit {
     return this.http.getRequest('food')
     .subscribe(
       response => {
+        this.isLoader = false;
         this.dummyOptions = response;
         this.options = this.dummyOptions.data;
         // console.log(response);
@@ -100,10 +103,12 @@ export class AddItemComponent implements OnInit {
   }
 
   submitUserDetails() {
+    this.isLoader = true;
     this.createItemForm.value.foodId = this.myControl.value._id;
     console.log(this.createItemForm.value);
     this.http.addNewItem(this.addItemHit, this.createItemForm.value)
       .subscribe(data => {
+        this.isLoader = false;
         console.log(data);
       },
         error => {

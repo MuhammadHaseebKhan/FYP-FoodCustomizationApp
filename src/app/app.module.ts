@@ -34,6 +34,8 @@ import { ItemsOfEachFoodComponent } from './items-of-each-food/items-of-each-foo
 import { AllCategoriesOnlyComponent } from './all-categories-only/all-categories-only.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
+import { EditFoodComponent } from './edit-food/edit-food.component';
+import { OrderComponent } from './order/order.component';
 // import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 // import { registerLocaleData } from '@angular/common';
 // import zh from '@angular/common/locales/zh';
@@ -66,7 +68,9 @@ import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.compo
     ItemsOfEachFoodComponent,
     AllCategoriesOnlyComponent,
     EditCategoryComponent,
-    EditRestaurantComponent
+    EditRestaurantComponent,
+    EditFoodComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
