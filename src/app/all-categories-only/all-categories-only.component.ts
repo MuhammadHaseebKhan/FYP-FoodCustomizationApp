@@ -15,6 +15,7 @@ export class AllCategoriesOnlyComponent implements OnInit {
   categoryId;
   concatenatedUrl;
   isLoader = false;
+  isArrayEmpty = false;
 
   constructor(
     private http: HttpServiceService,
@@ -34,6 +35,10 @@ export class AllCategoriesOnlyComponent implements OnInit {
         this.isLoader = false;
         this.categoriesArray = response;
         this.dummyCategoriesArray = this.categoriesArray.data;
+        if (this.dummyCategoriesArray.length === 0 || this.dummyCategoriesArray.length === undefined) {
+          this.isArrayEmpty = true;
+          console.log('hello');
+        }
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyCategoriesArray);

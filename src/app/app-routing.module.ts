@@ -25,6 +25,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 import { EditFoodComponent } from './edit-food/edit-food.component';
 import { OrderComponent } from './order/order.component';
+import { OrdersDeliveredComponent } from './orders-delivered/orders-delivered.component';
 const routes: Routes = [
     // { path : '', redirectTo: '/body', pathMatch: 'full'},
     { path : '', redirectTo: '/login', pathMatch: 'full'},
@@ -57,6 +58,8 @@ const routes: Routes = [
             { path : 'editcategory/:cid' , component: EditCategoryComponent},
             { path : 'editrestaurant/:cid' , component: EditRestaurantComponent},
             { path : 'editfood/:cid' , component: EditFoodComponent},
+            { path : 'pendingOrders' , component: OrderComponent},
+            { path : 'ordersdelivered' , component: OrdersDeliveredComponent},
         ]
         },
     // { path : 'adminprofile' , component: AdminprofileComponent},

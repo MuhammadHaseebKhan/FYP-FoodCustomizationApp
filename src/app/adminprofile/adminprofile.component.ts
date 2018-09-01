@@ -17,18 +17,21 @@ export class AdminprofileComponent implements OnInit {
   };
   imgId;
   dummyImgId;
+  isLoader = false;
 
   constructor(
     private http: HttpServiceService,
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     this.getProfile();
   }
   getProfile() {
     this.http.getRequest(this.getProfileHit)
     .subscribe(
       response => {
+        this.isLoader = false;
         this.dummyUserProfileData = response;
         this.userProfileData = this.dummyUserProfileData.data;
       console.log(this.userProfileData);

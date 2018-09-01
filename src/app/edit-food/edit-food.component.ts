@@ -49,6 +49,7 @@ export class EditFoodComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoader = true;
     this.activatedRoute.params.subscribe((params: Params) => {
       this.foodId = params['cid'];
       console.log(this.foodId);
@@ -61,6 +62,7 @@ export class EditFoodComponent implements OnInit {
     this.http.getRequest(this.concatenatedUrl)
     .subscribe(
       response => {
+        this.isLoader = false;
         // console.log(response);
         this.dummyResponseArray = response;
         this.responseArray = this.dummyResponseArray.data;

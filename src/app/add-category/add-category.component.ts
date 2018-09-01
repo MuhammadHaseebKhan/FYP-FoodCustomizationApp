@@ -14,7 +14,7 @@ export class AddCategoryComponent implements OnInit {
     level: 1,
     isLeaf: 1
   };
-
+  isLoader = false;
   constructor(
     private httpService: HttpServiceService,
     private router: Router,
@@ -24,9 +24,11 @@ export class AddCategoryComponent implements OnInit {
   }
 
   addCategory() {
+    this.isLoader = true;
     console.log(this.input);
     this.httpService.addNewCategory('category', this.input)
     .subscribe(response => {
+      this.isLoader = true;
       console.log(response);
       this.router.navigate(['admin-dashboard/allcategories']);
     },

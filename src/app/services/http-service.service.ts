@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class HttpServiceService {
+  private orderReceived = [];
+  private orderDelivered = [];
   private baseUrl: String = 'https://foodistanweb.herokuapp.com/api/';
 
   // AccessToken:string = '';
@@ -32,9 +34,9 @@ export class HttpServiceService {
 
   signup(hit, data) {
     return this.http.post(`${this.baseUrl}${hit}`, data)
-      .map(data => {
-        console.log(data);
-        return data;
+      .map(response => {
+        console.log(response);
+        return response;
       });
   }
 
@@ -104,4 +106,26 @@ export class HttpServiceService {
     return this.http.post(`${this.baseUrl}${hit}`, data, { headers: headers });
   }
 
+  getOrderRequest(hit , orderCheck) {
+    this.orderDelivered = [];
+    this.orderReceived = [];
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('id_token') });
+    // const headers = this.createAuthorizationHeader(new HttpHeaders());
+    return this.http.get(`${this.baseUrl}${hit}`, { headers: headers })
+      .map(response => {
+        console.log(response);
+        response['data'].map(order => {
+          if (order.status === 0) {
+            this.orderDelivered.push(order);
+          } else {
+            this.orderReceived.push(order);
+          }
+        });
+        if (orderCheck === 1) {
+          return this.orderReceived;
+        } else {
+          return this.orderDelivered;
+        }
+      });
+  }
 }

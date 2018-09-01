@@ -60,6 +60,18 @@
                 <p>Category wise Food</p>
             </div>
         </mat-nav-list>  
+        <mat-nav-list routerLink="pendingOrders" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer5">
+                <img class="navListImage" src="./../../assets/images/maintenance.png" alt="card data" />
+                <p>Orders Recieved</p>
+            </div>
+        </mat-nav-list>
+        <mat-nav-list routerLink="ordersdelivered" *ngIf="!isUserRoleAdmin" class="side-nav-list">
+            <div class="navListContainer5">
+                <img class="navListImage" src="./../../assets/images/maintenance.png" alt="card data" />
+                <p>OrdersDelivered</p>
+            </div>
+        </mat-nav-list>
       </mat-sidenav>
 
       <!-- <mat-sidenav-content>

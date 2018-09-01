@@ -2,8 +2,15 @@
     <!-- <p> {{userProfileData.email}}</p> -->
     <mat-card class="example-card">
             <mat-card-header>
+                <div class="loader" *ngIf="isLoader">
+                    <!-- <div class="side-logo">
+                        <mat-icon class="brandIcon">local_dining</mat-icon>
+                        <h1>Foodistan</h1>
+                    </div> -->
+                    <mat-spinner class="spinner"></mat-spinner>
+                  </div>
               <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title><b> {{userProfileData.role}} </b></mat-card-title>
+              <mat-card-title><b> {{userProfileData.name}} </b></mat-card-title>
               <mat-card-subtitle>{{userProfileData.email}}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="../../assets/images/profilepic.png" alt="Photo of a User">

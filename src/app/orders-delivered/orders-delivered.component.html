@@ -1,0 +1,48 @@
+<div class="orderPage">
+    <div class="ordersContainer">
+      <div class="loader" *ngIf="isLoader">
+                  <!-- <div class="side-logo">
+                      <mat-icon class="brandIcon">local_dining</mat-icon>
+                      <h1>Foodistan</h1>
+                  </div> -->
+          <mat-spinner class="spinner"></mat-spinner>
+      </div>
+  
+      <div *ngFor="let order of ordersArray">
+        <mat-card class="orderCard">
+          <mat-card-header class="header">
+      <mat-card-title class="cardTitle">Food Order</mat-card-title>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content class="orderCardContent">
+      <div>
+          <label>Name: </label><span> {{order.foodId.name}}</span>
+      </div>
+      <div>
+          <label>Quantity: </label><span> {{order.quantity}}</span>
+      </div>
+      <div>
+          <label>Price: </label><span> {{order.price}}</span>
+      </div>
+      <div>
+          <label>Delivery Charges: </label><span> {{order.deliveryCharges}}</span>
+      </div>
+      <div>
+          <label>Delivery Address: </label><span> {{order.deliveryAddress}}</span>
+      </div>
+      <div>
+          <label>Delivery Phone: </label><span> {{order.deliveryPhone}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="orderCardFooter">
+       <div class="crudButtons">
+          <button (click)="deliverFood()" class="deliveredButton" mat-button>Deliver</button>
+          <button class="deleteButton" mat-button>Delete</button>
+       </div> 
+    </mat-card-actions>
+  </mat-card>
+    </div>
+  
+  </div>
+  
+  </div>

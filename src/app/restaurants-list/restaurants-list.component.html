@@ -10,20 +10,35 @@
         </div> -->
         <mat-spinner class="spinner"></mat-spinner>
     </div>
+    <div class="restaurantsCardsholder">
 
-    <div (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
+        <div (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
 
-      <mat-card> 
-        <mat-card-title>{{restaurant.name}}</mat-card-title>
-        <mat-card-content>
-          <div class="crudButtons">
-              <button (click)="deleteRestaurant(restaurant,i)" class="deleteButton">Delete</button>
-              <button (click)="eidtRestaurant(restaurant,i)" class="deleteButton">Edit</button>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    
-    </div>
+        <mat-card> 
+            <mat-card-title>{{restaurant.name}}</mat-card-title>
+            <mat-card-content>
+                <p>email: {{restaurant.email}}</p>
+                <p>branch: {{restaurant.branch}}</p>
+                <p>code: {{restaurant.code}}</p>
+            <div class="crudButtons">
+                <button (click)="deleteRestaurant(restaurant,i)" class="deleteButton">Delete</button>
+                <button (click)="eidtRestaurant(restaurant,i)" class="deleteButton">Edit</button>
+            </div>
+            <div class="deleteloader" *ngIf="isDeleteLoader">
+                    <!-- <div class="side-logo">
+                        <mat-icon class="brandIcon">local_dining</mat-icon>
+                        <h1>Foodistan</h1>
+                    </div> -->
+                    <mat-spinner class="deleteSpinner"></mat-spinner>
+            </div>
+            </mat-card-content>
+        </mat-card>
+        
+        </div>
+    </div>    
+</div>
+<div class="emptyData" *ngIf="isArrayEmpty">
+    <p> No Data! </p>
 </div>
   
   <div (click)="addRestaurant()" class="addRestaurant">

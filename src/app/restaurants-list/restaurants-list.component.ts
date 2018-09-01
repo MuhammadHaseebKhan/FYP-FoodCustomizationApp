@@ -19,6 +19,8 @@ export class RestaurantsListComponent implements OnInit {
   restId;
   dummyRestaurantsArray;
   isLoader = false;
+  isDeleteLoader = false;
+  isArrayEmpty = false;
   restaurantId;
 
   constructor(
@@ -38,6 +40,9 @@ export class RestaurantsListComponent implements OnInit {
         this.dummyrestaurantsArray = response;
         this.restaurantsArray = this.dummyrestaurantsArray.data;
         this.isLoader = false;
+        if (this.restaurantsArray.length === 0 || this.restaurantsArray.length === undefined) {
+          this.isArrayEmpty = true;
+        }
         // console.log(data);
         console.log(this.restaurantsArray);
         // console.log(this.options.data);
@@ -58,6 +63,7 @@ export class RestaurantsListComponent implements OnInit {
   }
 
   deleteRestaurant(restaurant, i) {
+    this.isDeleteLoader = true;
     this.restId = restaurant._id;
     console.log(this.restId);
     this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/restaurant/' + this.restId;
@@ -66,6 +72,7 @@ export class RestaurantsListComponent implements OnInit {
     this.http.delete(this.concatenatedUrl)
     .subscribe(
       response => {
+        this.isDeleteLoader = false;
         const data = [...this.restaurantsArray];
         data.splice(i, 1);
         console.log(i);

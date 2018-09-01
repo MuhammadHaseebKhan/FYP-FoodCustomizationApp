@@ -16,6 +16,7 @@ export class CategoryComponent implements OnInit {
   categoryId;
   concatenatedUrl;
   isLoader = false;
+  isArrayEmpty = false;
 
   constructor(
     private http: HttpServiceService,
@@ -35,6 +36,10 @@ export class CategoryComponent implements OnInit {
         this.categoriesArray = response;
         this.dummyCategoriesArray = this.categoriesArray.data;
         this.isLoader = false;
+        if (this.dummyCategoriesArray.length === 0 || this.dummyCategoriesArray.length === undefined) {
+          this.isArrayEmpty = true;
+          console.log('hello');
+        }
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyCategoriesArray);

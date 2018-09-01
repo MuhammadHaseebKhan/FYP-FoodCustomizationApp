@@ -14,6 +14,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class AddNewRestaurantComponent implements OnInit {
 
+  isLoader = false;
   userToken;
   getUsersHit = 'users';
   hide = true;
@@ -49,7 +50,8 @@ export class AddNewRestaurantComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.getAllUsers();
+    // this.isLoader = true;
+    // this.getAllUsers();
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -68,6 +70,7 @@ export class AddNewRestaurantComponent implements OnInit {
   getAllUsers() {
     return this.httpService.getRequest(this.getUsersHit)
       .subscribe(data => {
+        // this.isLoader = false;
         this.options = data;
         // console.log(data);
         console.log(this.options);
@@ -79,10 +82,12 @@ export class AddNewRestaurantComponent implements OnInit {
   }
 
   submitRestaurantDetails() {
+    this.isLoader = true;
     console.log(this.createRestaurantForm.value);
     // this.createRestaurantForm.value.uId = this.myControl.value._id;
     this.httpService.createRestaurant('restaurant', this.createRestaurantForm.value)
       .subscribe(data => {
+        this.isLoader = false;
         console.log(data);
         this.flashMessage.show('Restaurant created successfully!', {cssClass: 'alert-success', timeout: 5000 });
         this.router.navigate(['admin-dashboard/restaurantslist']);

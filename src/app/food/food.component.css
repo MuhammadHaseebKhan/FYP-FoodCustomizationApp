@@ -81,3 +81,11 @@
   margin: auto;
   margin-top: 200px;
 }
+.emptyData {
+  /* border: 1px solid red; */
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}

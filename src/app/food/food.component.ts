@@ -15,6 +15,7 @@ export class FoodComponent implements OnInit {
   foodId;
   concatenatedUrl;
   isLoader = false;
+  isArrayEmpty = false;
 
   constructor(
     private http: HttpServiceService,
@@ -33,6 +34,10 @@ export class FoodComponent implements OnInit {
         this.FoodArray = response;
         this.dummyFoodArray = this.FoodArray.data;
         this.isLoader = false;
+        if (this.dummyFoodArray.length === 0 || this.dummyFoodArray.length === undefined) {
+          this.isArrayEmpty = true;
+          console.log('hello');
+        }
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyFoodArray);

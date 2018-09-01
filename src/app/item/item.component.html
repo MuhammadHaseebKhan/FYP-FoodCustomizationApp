@@ -19,6 +19,9 @@
     </div> -->
     <mat-spinner class="spinner"></mat-spinner>
   </div>
+  <div class="emptyData" *ngIf="isArrayEmpty">
+      <p> No item, add some! </p>
+  </div>
   
   <div (click)="addCategory()" class="addCategory">
     <img src="./../../assets/images/add.png" alt="card data" />

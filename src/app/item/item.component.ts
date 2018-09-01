@@ -20,6 +20,7 @@ export class ItemComponent implements OnInit {
   dummyCategoriesArray: any = [];
   categoryId;
   isLoader = false;
+  isArrayEmpty = false;
 
   constructor(
     private http: HttpServiceService,
@@ -45,6 +46,10 @@ export class ItemComponent implements OnInit {
         this.itemArray = response;
         this.dummyItemArray = this.itemArray.data;
         this.isLoader = false;
+        if (this.dummyItemArray.length === 0 || this.dummyItemArray.length === undefined) {
+          this.isArrayEmpty = true;
+          console.log('hello');
+        }
         // console.log(response);
         // console.log(this.categoriesArray.data);
         console.log(this.dummyItemArray);

@@ -1,5 +1,12 @@
 <div class="orderPage">
   <div class="ordersContainer">
+    <div class="loader" *ngIf="isLoader">
+                <!-- <div class="side-logo">
+                    <mat-icon class="brandIcon">local_dining</mat-icon>
+                    <h1>Foodistan</h1>
+                </div> -->
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
 
     <div *ngFor="let order of ordersArray">
       <mat-card class="orderCard">
@@ -27,10 +34,12 @@
         <label>Delivery Phone: </label><span> {{order.deliveryPhone}}</span>
     </div>
   </mat-card-content>
-  <!-- <mat-card-actions class="orderCardFooter">
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions> -->
+  <mat-card-actions class="orderCardFooter">
+     <div class="crudButtons">
+        <button (click)="deliverFood(order, i)" class="deliveredButton" mat-button>Deliver</button>
+        <button (click)="deliverFood(order, i)" class="deleteButton" mat-button>Delete</button>
+     </div> 
+  </mat-card-actions>
 </mat-card>
   </div>
 
