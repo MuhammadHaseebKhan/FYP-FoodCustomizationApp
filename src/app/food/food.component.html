@@ -4,7 +4,7 @@
       <div class="allCategoriesHeading">
           <h2> All Food:</h2>
       </div>
-      <ul (click)="clickOnCategory($event,food,i)" class="categoriesListContainer" *ngFor="let food of dummyFoodArray; index as i">
+      <!-- <ul (click)="clickOnCategory($event,food,i)" class="categoriesListContainer" *ngFor="let food of dummyFoodArray; index as i">
   
       <li> {{food.name}}</li>
       <div class="buttonsContainer">
@@ -12,7 +12,32 @@
         <button (click)="deleteFood(food,i)" class="categoryCrudButtons">Delete</button>
       </div>
       
-    </ul>
+    </ul> -->
+  </div>
+  <div class="foodCardsHolder">
+    <div class="foodCard" *ngFor="let food of dummyFoodArray; index as i">
+        <mat-card> 
+            <mat-card-title class="cardTitle">{{food.name}}</mat-card-title>
+            <mat-card-content class="orderCardContent">
+                <!-- <p>price: {{food.price}}</p>
+                <p>category: {{food.catId.name}}</p>
+                <p>restaurant : {{food.resId.name}}</p> -->
+                <div>
+                    <label>Price: </label><span> {{food.price}}</span>
+                </div>
+                <div>
+                    <label>Category: </label><span> {{food.catId.name}}</span>
+                </div>
+                <div>
+                    <label>Restaurant: </label><span> {{food.resId.name}}</span>
+                </div>
+            <div class="crudButtons">
+                <button (click)="deleteFood(food,i)" class="deleteButton">Delete</button>
+                <button (click)="editFood(food,i)" class="deleteButton">Edit</button>
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
   </div>
   <div class="loader" *ngIf="isLoader">
     <!-- <div class="side-logo">
@@ -29,6 +54,5 @@
       <img src="./../../assets/images/add.png" alt="card data" />
     </div>
   </div>
-  
   
   

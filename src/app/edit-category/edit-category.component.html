@@ -1,10 +1,12 @@
+<div class="addCategoryPage">
 <mat-card class="addCategoryCard">
-    <mat-card-title>
+    <mat-card-title class="cardTitle">
       Edit Category
     </mat-card-title>
     <mat-card-content>
       <div class="example-container">
-
+          <br>
+          
           <mat-form-field>
             <input [(ngModel)]="input.name" (keyup.enter)="editCategory()" matInput placeholder="Enter Category Name">
           </mat-form-field>
@@ -14,3 +16,13 @@
       </div>
     </mat-card-content>
   </mat-card>
+  <div class="loader" *ngIf="isLoader">
+      <!-- <div class="side-logo">
+          <mat-icon class="brandIcon">local_dining</mat-icon>
+          <h1>Foodistan</h1>
+      </div> -->
+      <mat-spinner class="spinner"></mat-spinner>
+  </div>
+
+</div>  
+

@@ -10,6 +10,13 @@
         </div> -->
         <mat-spinner class="spinner"></mat-spinner>
     </div>
+    <div class="deleteloader" *ngIf="isDeleteLoader">
+        <!-- <div class="side-logo">
+            <mat-icon class="brandIcon">local_dining</mat-icon>
+            <h1>Foodistan</h1>
+        </div> -->
+        <mat-spinner class="deleteSpinner"></mat-spinner>
+    </div>
     <div class="restaurantsCardsholder">
 
         <div (click)="clickOnRestaurant(event,restaurant,i)" class="restaurantsListContainer" *ngFor="let restaurant of restaurantsArray; index as i">
@@ -23,13 +30,6 @@
             <div class="crudButtons">
                 <button (click)="deleteRestaurant(restaurant,i)" class="deleteButton">Delete</button>
                 <button (click)="eidtRestaurant(restaurant,i)" class="deleteButton">Edit</button>
-            </div>
-            <div class="deleteloader" *ngIf="isDeleteLoader">
-                    <!-- <div class="side-logo">
-                        <mat-icon class="brandIcon">local_dining</mat-icon>
-                        <h1>Foodistan</h1>
-                    </div> -->
-                    <mat-spinner class="deleteSpinner"></mat-spinner>
             </div>
             </mat-card-content>
         </mat-card>

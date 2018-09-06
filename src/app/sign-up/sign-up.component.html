@@ -66,7 +66,7 @@
         </mat-form-field> -->
   
             <mat-form-field>
-              <input type="text" placeholder="Assign Restaurant" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <input type="text" placeholder="Assign Restaurant" matInput [formControl]="createRestaurantForm.get('resId')" [matAutocomplete]="auto">
               <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                   {{ option.name}}
@@ -81,8 +81,8 @@
       
       </mat-form-field>     -->
             <br>
-            <button class="submit-button mat-raised-button" [disabled]="createRestaurantForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="submitUserDetails()">Submit</button>
-  
+            <button class="submit-button mat-raised-button" [disabled]="createRestaurantForm.status == 'INVALID'" (click)="submitUserDetails()">Submit</button>
+            <!--&& myControl.status == 'INVALID'-->
             <!-- <mat-form-field>
           <textarea matInput placeholder="Textarea"></textarea>
         </mat-form-field> -->

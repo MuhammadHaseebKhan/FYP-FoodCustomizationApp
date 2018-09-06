@@ -64,11 +64,12 @@ export class ItemComponent implements OnInit {
    console.log(item._id);
   }
   deleteItem(item, i) {
+    if (confirm('Are you sure?')) {
     this.itemId = item._id;
     console.log(this.itemId);
     this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/item/' + this.itemId;
     console.log(this.concatenatedUrl);
-    window.alert('Are you sure?');
+    // window.alert('Are you sure?');
     this.http.delete(this.concatenatedUrl)
     .subscribe(
       response => {
@@ -82,7 +83,10 @@ export class ItemComponent implements OnInit {
         console.log(error);
       }
     );
+  } else {
+    console.log('Cancelled!');
   }
+}
 
   addCategory() {
     this.router.navigate(['admin-dashboard/additem']);

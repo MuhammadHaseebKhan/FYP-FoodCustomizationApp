@@ -20,6 +20,7 @@ export class EditCategoryComponent implements OnInit {
     level: 1,
     isLeaf: 1
   };
+  isLoader = false;
 
   constructor(
     private http: HttpServiceService,
@@ -28,6 +29,7 @@ export class EditCategoryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLoader = true;
     this.activatedRoute.params.subscribe((params: Params) => {
       this.categoryId = params['cid'];
       console.log(this.categoryId);
@@ -41,6 +43,7 @@ export class EditCategoryComponent implements OnInit {
     this.http.getRequest(this.concatenatedUrl)
     .subscribe(
       response => {
+        this.isLoader = false;
         // console.log(response);
         this.dummyResponseArray = response;
         this.responseArray = this.dummyResponseArray.data;

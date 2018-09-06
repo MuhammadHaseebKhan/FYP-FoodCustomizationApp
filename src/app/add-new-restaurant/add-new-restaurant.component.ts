@@ -40,8 +40,8 @@ export class AddNewRestaurantComponent implements OnInit {
   }
   createForm() {
     this.createRestaurantForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       branch: ['', Validators.required],
       code: ['', Validators.required],
       // upImgId: ['', Validators.required]

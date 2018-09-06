@@ -4,6 +4,7 @@ import { HttpServiceService } from '../services/http-service.service';
 import { RouterModule, Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from '../services/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -19,17 +20,32 @@ export class LoginComponent implements OnInit {
 
   tokenParams = TokenParams;
   mydata;
+  createRestaurantForm: FormGroup;
 
-  input = {
-    email: '',
-    password: ''
-  };
+  // input = {
+  //   email: '',
+  //   password: ''
+  // };
 
   constructor(
       private auth: AuthService,
       private flashMessage: FlashMessagesService,
       private httpService: HttpServiceService,
-      private router: Router) { }
+      private router: Router,
+      public fb: FormBuilder,
+    ) {
+      this.createForm();
+     }
+     createForm() {
+      this.createRestaurantForm = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        // code: ['', Validators.required],
+        // upImgId: ['', Validators.required]
+        // countryId: ['', Validators.required],
+        // uId: ['', Validators.required],
+      });
+    }
 
   ngOnInit() {
 
@@ -38,8 +54,8 @@ export class LoginComponent implements OnInit {
   getLogin() {
     console.log('hello world');
     this.isLoader = true;
-    console.log(this.input);
-    this.httpService.login(this.input)
+    console.log(this.createRestaurantForm.value);
+    this.httpService.login(this.createRestaurantForm.value)
       .subscribe(
         data => {
           this.isLoader = false;
@@ -56,7 +72,7 @@ export class LoginComponent implements OnInit {
         },
         error => {
           this.isLoader = false;
-          this.flashMessage.show('Unauthorized!',  {cssClass: 'alert-danger', timeout: 5000 });
+          this.flashMessage.show('Invalid username or password!',  {cssClass: 'alert-danger', timeout: 5000 });
           console.log(error);
         }
       );

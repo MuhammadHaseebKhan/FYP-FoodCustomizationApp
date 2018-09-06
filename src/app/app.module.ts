@@ -37,6 +37,7 @@ import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.compo
 import { EditFoodComponent } from './edit-food/edit-food.component';
 import { OrderComponent } from './order/order.component';
 import { OrdersDeliveredComponent } from './orders-delivered/orders-delivered.component';
+import { DialogComponent } from './dialog/dialog.component';
 // import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 // import { registerLocaleData } from '@angular/common';
 // import zh from '@angular/common/locales/zh';
@@ -72,7 +73,8 @@ import { OrdersDeliveredComponent } from './orders-delivered/orders-delivered.co
     EditRestaurantComponent,
     EditFoodComponent,
     OrderComponent,
-    OrdersDeliveredComponent
+    OrdersDeliveredComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

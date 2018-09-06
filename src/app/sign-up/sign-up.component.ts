@@ -25,7 +25,6 @@ export class SignUpComponent implements OnInit {
   resId: '';
   isFormValid = false;
   selected2;
-  myControl: FormControl = new FormControl();
 
   options: any = [
 
@@ -57,8 +56,6 @@ export class SignUpComponent implements OnInit {
       role: ['', Validators.required],
       password: ['', Validators.required],
       resId: ['', Validators.required]
-      // countryId: ['', Validators.required],
-      // uId: ['', Validators.required],
     });
   }
 
@@ -105,7 +102,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.getAllRestaurants();
-    this.filteredOptions = this.myControl.valueChanges
+    this.filteredOptions = this.createRestaurantForm.get('resId').valueChanges
       .pipe(
         startWith(''),
         map(val => this.filter(val))
@@ -138,10 +135,13 @@ export class SignUpComponent implements OnInit {
       return this.options.filter(option =>
         option.name.toLowerCase().includes(val.toLowerCase()));
     }
+    console.log(this.createRestaurantForm);
+    // this.createRestaurantForm.controls.resId.errors.required = false;
+    // this.createRestaurantForm.value.resId = this.myControl.value._id;
   }
 
   submitUserDetails() {
-    this.createRestaurantForm.value.resId = this.myControl.value._id;
+    this.createRestaurantForm.value.resId = this.createRestaurantForm.get('resId').value._id;
     console.log(this.createRestaurantForm.value);
     this.http.createRestaurant(this.registerUserHit, this.createRestaurantForm.value)
       .subscribe(data => {

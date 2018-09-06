@@ -8,19 +8,24 @@
       <div class="example-container">
         <form role="form" [formGroup]="createRestaurantForm">
           <mat-form-field>
-              <label class="requiredFields">*</label> <input formControlName="name"matInput placeholder="Enter Restaurant Name">
+              <input formControlName="name"matInput placeholder="Enter Restaurant Name">
+              <mat-error *ngIf="createRestaurantForm.controls.name.errors?.required">Name is required</mat-error>
+            </mat-form-field>
+
+          <mat-form-field>
+               <input formControlName="email"matInput placeholder="Enter email">
+              <mat-error *ngIf="createRestaurantForm.controls.email.errors?.required">Email is required</mat-error>
+              <mat-error *ngIf="!createRestaurantForm.controls.email.errors?.required && createRestaurantForm.controls.email.dirty">Invalid email address</mat-error>
           </mat-form-field>
 
           <mat-form-field>
-              <label class="requiredFields">*</label> <input formControlName="email"matInput placeholder="Enter email">
+               <input formControlName="branch" matInput placeholder="Enter Branch">
+              <mat-error *ngIf="createRestaurantForm.controls.branch.errors?.required">Branch is required</mat-error>
           </mat-form-field>
 
           <mat-form-field>
-              <label class="requiredFields">*</label> <input formControlName="branch" matInput placeholder="Enter Branch">
-          </mat-form-field>
-
-          <mat-form-field>
-              <label class="requiredFields">*</label> <input formControlName="code" matInput placeholder="Enter Code">
+               <input formControlName="code" matInput placeholder="Enter Code">
+              <mat-error *ngIf="createRestaurantForm.controls.code.errors?.required">Code is required</mat-error>
           </mat-form-field>
 
           <!-- <mat-form-field>
@@ -54,8 +59,8 @@
               <mat-spinner class="spinner"></mat-spinner>
           </div>
           <br>
-          <button class="submit-button mat-raised-button" [disabled]="createRestaurantForm.status == 'INVALID' && myControl.status == 'INVALID'" (click)="submitRestaurantDetails()">Submit</button>
-
+          <button class="submit-button mat-raised-button" [disabled]="createRestaurantForm.status == 'INVALID'" (click)="submitRestaurantDetails()">Submit</button>
+          <!-- && myControl.status == 'INVALID' -->
           <!-- <mat-form-field>
         <textarea matInput placeholder="Textarea"></textarea>
       </mat-form-field> -->

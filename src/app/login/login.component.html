@@ -11,8 +11,9 @@
 
     <mat-card class="login-form-container">
    
-        <h3 class="form-heading"> Login Form</h3>
-        <div class="form-fields">
+        <h3 class="form-heading"> Foodistan</h3>
+        <mat-icon class="brandIcon">local_dining</mat-icon>
+        <!-- <div class="form-fields">
             <mat-form-field>
                 <input [(ngModel)]="input.email" (keyup.Enter)="getLogin()" name="email" matInput placeholder=" &nbsp; &nbsp;Email">
                 <mat-icon matPrefix>face</mat-icon>
@@ -24,13 +25,36 @@
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
             
             </mat-form-field>          
-        </div>
+        </div> -->
+        <form class="loginForm" role="form" [formGroup]="createRestaurantForm">
+
+                <mat-form-field>
+                    <input formControlName="email"matInput placeholder=" &nbsp; &nbsp;Enter email">
+                    <mat-icon matPrefix>face</mat-icon>
+                    <mat-error *ngIf="createRestaurantForm.controls.email.errors?.required">Email is required</mat-error>
+                    <mat-error *ngIf="!createRestaurantForm.controls.email.errors?.required && createRestaurantForm.controls.email.dirty">Invalid email address</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field class="passwordField">
+                    <mat-icon class="lock" matPrefix>lock</mat-icon>
+                    <input formControlName="password" matInput placeholder=" &nbsp; &nbsp;Password" [type]="hide ? 'password' : 'text'">
+                    <mat-error *ngIf="createRestaurantForm.controls.password.errors?.required">password is required</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </mat-form-field>
+        
+                <!-- <div class="loader" *ngIf="isLoader">
+                    <mat-spinner class="spinner"></mat-spinner>
+                </div> -->
+                <br>
+                <!-- <button class="submit-button mat-raised-button" [disabled]="createRestaurantForm.status == 'INVALID'" (click)="getLogin()">Submit</button> -->
+                <button class="login-button" [disabled]="createRestaurantForm.status == 'INVALID'" (click)="getLogin()" mat-raised-button >LOGIN</button>
+        </form>
 
         <!-- <input class="login-button" type="submit" (click)="getLogin()" value="Login"> -->
-        <button class="login-button" (click)="getLogin()" mat-raised-button >LOGIN</button>
+        <!-- <button class="login-button" (click)="getLogin()" mat-raised-button >LOGIN</button> -->
 
         <div class="links">
-            <a routerLink="/signup">Register Now!</a>
+            <a>Register Now!</a>
             <a>Forgot Password?</a>
         </div>
     </mat-card>

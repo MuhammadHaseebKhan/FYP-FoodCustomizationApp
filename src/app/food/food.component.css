@@ -2,6 +2,21 @@
   border: 1px solid transparent;
   height: auto;
 }
+.foodCardsHolder{
+   /* border: 2px solid green; */
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding-bottom: 20px;
+}
+.foodCard{
+  /* border: 1px solid red; */
+  border: 1px solid #0288d1;
+  width: 400px;
+  /* height: 330px; */
+  margin: auto;
+  margin-top: 20px;
+}
 
 .allCategoriesHeading{
   border: 1px solid transparent;
@@ -88,4 +103,35 @@
   margin: auto;
   text-align: center;
   margin-top: 100px;
+}
+.crudButtons{
+  /* border: 1px solid; */
+  width: 210px;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.deleteButton{
+  width: 80px;
+  border: 1px solid;
+  border-radius: 5px;
+  height: 40px;
+  background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+  color: white;
+  margin-right: 10px;
+  /* margin: 0px auto; */
+}
+.cardTitle{
+  border: 1px solid transparent;
+  margin: auto;
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.orderCardContent{
+  border: 1px solid transparent;
+  margin-top: 15px;
+  height: 140px;
 }

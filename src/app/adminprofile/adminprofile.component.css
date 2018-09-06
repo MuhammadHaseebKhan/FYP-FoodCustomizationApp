@@ -4,7 +4,7 @@
 }
 .example-card {
     max-width: 400px;
-    margin: 10px auto;
+    margin: 30px auto;
   }
   
 .example-header-image {
@@ -12,3 +12,10 @@
     background-size: cover;
   }
   
+  .loader{
+    /* border: 1px solid red; */
+    z-index: 999;position: absolute;
+    left: 170px;
+    top: 210px;
+
+  }

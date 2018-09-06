@@ -62,11 +62,16 @@ export class AllCategoriesOnlyComponent implements OnInit {
     this.router.navigate(['admin-dashboard/categorywisefood', this.categoryId]);
   }
   deleteCategory(category, i) {
-    this.categoryId = category._id;
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('Hi!');
+    if (confirm('Are you sure?')) {
+      // console.log('Hello world!');
+      this.categoryId = category._id;
     console.log(this.categoryId);
     this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/category/' + this.categoryId;
     console.log(this.concatenatedUrl);
-    window.alert('Are you sure?');
+    // window.alert('Are you sure?');
     this.http.delete(this.concatenatedUrl)
     .subscribe(
       response => {
@@ -80,8 +85,10 @@ export class AllCategoriesOnlyComponent implements OnInit {
         console.log(error);
       }
     );
+  } else {
+    console.log('Cancelled!');
   }
-
+  }
   editCategory(category, i) {
     console.log(category._id);
     console.log(category.name);

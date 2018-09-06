@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpServiceService } from '../services/http-service.service';
 import { RouterModule, Router } from '@angular/router';
 
@@ -16,10 +16,12 @@ export class FoodComponent implements OnInit {
   concatenatedUrl;
   isLoader = false;
   isArrayEmpty = false;
+  animal: string;
+  name: string;
 
   constructor(
     private http: HttpServiceService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -58,11 +60,13 @@ export class FoodComponent implements OnInit {
     this.router.navigate(['admin-dashboard/food']);
   }
   deleteFood(food, i) {
+    console.log('hi');
+    if (confirm('Are you sure?')) {
     this.foodId = food._id;
     console.log(this.foodId);
     this.concatenatedUrl = 'https://foodistanweb.herokuapp.com/api/food/' + this.foodId;
     console.log(this.concatenatedUrl);
-    window.alert('Are you sure?');
+    // window.alert('Are you sure?');
     this.http.delete(this.concatenatedUrl)
     .subscribe(
       response => {
@@ -76,9 +80,13 @@ export class FoodComponent implements OnInit {
         console.log(error);
       }
     );
+  } else {
+    console.log('Cancelled!');
   }
+}
   editFood(food, i) {
     this.foodId = food._id;
+    console.log(this.foodId);
     this.router.navigate(['admin-dashboard/editfood', this.foodId]);
   }
 
@@ -86,4 +94,3 @@ export class FoodComponent implements OnInit {
     this.router.navigate(['admin-dashboard/addfood']);
   }
 }
-

@@ -48,10 +48,19 @@ input.mat-input-element{
 
 .form-heading{
   /* border: 1px solid; */
-  text-align: center;
+  /* text-align: center; */
   position: absolute;
-  left: 70px;
+  left: 110px;
   top: 35px;
+  color: #00bcd4;
+  font-weight: bold;
+  font-size: 26px;
+}
+.brandIcon{
+  position: absolute;
+  left: 65px;
+  top: 35px;
+  color: #00bcd4;
 }
 
 .links{
@@ -93,26 +102,17 @@ mat-form-field{
   margin: auto;
   margin-top: 250px;
 }
-/* .mat-progress-spinner circle, .mat-spinner circle{
-  stroke: red;
-} */
-
-/* .side-logo{
-  margin: auto;
-  margin-top: 30px;
-  display: flex;
-  color: white;
-  width: 260px;
-  height: 80px;
-  margin-bottom: 60px;
-  background: linear-gradient(45deg, #1691f5 0%, #6c94f1 100%)
+.loginForm{
+  /* border: 1px solid red; */
+  margin-top: 110px;
+  text-align: center;
 }
-.brandIcon{
-  margin-left: 20px;
-  margin-top: 20px;
+.lock{
+  /* border: 1px solid red; */
+  /* margin-left: 25px; */
 }
-h1{
-  margin-left: 10px;
-  font-size: 32px;
-  margin-top: 15px;
-} */
+.passwordField{
+ /* border: 1px solid red; */
+ width: 200px;
+ margin-top: 10px;
+}
